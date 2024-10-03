@@ -1,0 +1,254 @@
+@use './partials/variables' as *;
+@use './partials/mixins' as *;
+
+html, body {
+  margin: 0;
+  font-family: $avenir-next;
+}
+
+.header {
+    background-color: $BandSite-Black;
+    font-size: 24px;
+    height: 32px;
+    font-weight: 700;
+    padding: 1rem 0;
+
+    &__image {
+      display: flex;
+      justify-content: center;
+    }
+
+    &__nav {
+      background-color: $BandSite-Black;
+      font-size: 14px;
+      height: 22px;
+      font-weight: 600;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-evenly;
+     
+    }
+  
+    &__item {
+      color: $White;
+      // font-size: $mobile-header;
+    }
+
+    @include tablet {
+      flex-direction: row;
+      justify-content: flex-start;
+      align-items:flex-start;
+
+      &__nav {
+        flex-direction: row;
+        justify-content: flex-start;
+        align-items: center;  
+    
+      }
+
+      &__item {
+        color: $White;
+      }
+
+    }
+
+    @include desktop {
+      flex-direction: row;
+      justify-content: flex-start;
+      align-items:flex-start;
+
+      &__nav {
+        flex-direction: row;
+        justify-content: flex-start;
+        align-items: center;  
+    
+      }
+
+      &__item {
+        color: $White;
+      }
+  }
+
+}
+
+.hero {
+  &__image-container {
+    position: relative;
+    width: 100%;
+    height: 0;
+    padding-bottom: 56.25%; 
+  }
+
+  &__image {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+  }
+
+  &__overlay {
+    position: absolute;
+    bottom: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  &__title {
+    color: $White;
+    font-weight: bold;
+    text-align: center;
+    // opacity: 50%;
+    // padding: 1rem;
+    margin: 16px;
+    
+    // Mobile styles
+    font-size: 1.5rem;
+    margin-bottom: 16px; // Padding after headlines for mobile
+
+    // Tablet and Desktop styles
+    @media (min-width: 768px) {
+      font-size: 2rem;
+      margin-bottom: 36px; // Padding after headlines for tablet/desktop
+    }
+    
+    // Desktop styles
+    @media (min-width: 1024px) {
+      font-size: 2.5rem;
+    }
+  }
+}
+
+.main-content {
+  &__text {
+    margin: 16px 16px;
+    
+    @media (min-width: 768px) {
+      margin: 36px 36px; // Padding between components for tablet/desktop
+    }
+  }
+
+  &__gallery {
+    background-color: $Alabaster;
+    padding-top: 24px; // Padding before headlines for mobile
+    
+    @media (min-width: 768px) {
+      padding-top: 48px; // Padding before headlines for tablet/desktop
+    }
+  }
+}
+
+// .Parent_imageContainer {
+//   display: flex;
+//   flex-direction: column;
+//   flex-wrap: wrap;
+//   justify-content: space-evenly;
+//   align-items: center;
+//   margin: 0 16px;
+  
+//   @media (min-width: 768px) {
+//     margin: 0 36px; // Adjust margin for tablet/desktop
+//   }
+// }
+
+// .imageContainer{
+//  margin: 16px 0;
+//  padding: 16px 0;
+
+// }
+
+.Parent_imageContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 0 16px;
+  
+  @include tablet {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin: 0 36px;
+  }
+}
+
+.imageContainer img {
+  width: 100%;
+  margin-bottom: 24px;
+  
+  @include tablet {
+    width: calc(33.333% - 16px); // 2 columns with 24px gap
+  }
+  
+  @include desktop {
+    width: calc(33.333% - 16px); // 3 columns with 24px gap
+  }
+}
+
+// img {
+//   width: 100%;
+//   height: auto;
+//   display: block;
+//   object-fit: cover;
+// }
+
+
+.footer {
+  background-color: $BandSite-Black; 
+  color: $White; 
+  padding: 24px 16px; // Mobile padding
+
+  @include tablet {
+    padding: 48px 36px; // Tablet/Desktop padding
+  }
+
+  &__container {
+    max-width: 1280px; // Or whatever max-width you prefer
+    margin: 0 auto;
+  }
+
+  // &__content {
+  //   display: flex;
+  //   flex-direction: column;
+  //   align-items: flex-start;
+
+    @include tablet {
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+  &__title {
+    font-size: 24px;
+    margin: 0 0 16px 0; // Mobile margin
+
+    @include tablet {
+      font-size: 36px;
+      margin: 0; // Remove bottom margin on tablet and up
+    }
+
+    @include desktop {
+      font-size: 36px;
+      margin: 0;
+    }
+  }
+
+  &__social {
+    &-list {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      display: flex;
+    }
+
+    &-item {
+      margin-right: 30px;
+
+    &-icon {
+      width: 24px; // Adjust as needed
+      height: 24px; // Adjust as needed
+    }
+  
+
+  }
+}
+}
+

@@ -7,23 +7,23 @@
     <link rel="stylesheet" href="/styles/main.css" />
   </head>
   <body>
-    <header>
-      <div class="header">
+    <header class="header">
+      <div class="header__container">
         <div class="header__logo"></div>
-        <a href="/" class="header__logo--band">
+        <a href="#" class="header__logo-link">
           <img
             src="/assets/logo/Logo-bandsite.svg"
-            class="header__image"
+            class="header__logo-image"
             alt="logoBand"
           />
         </a>
         <nav class="header__nav">
-          <div class="header__item">Biography</div>
-          <div class="header__item">Shows</div>
+          <div class="header__nav-item">Biography</div>
+          <div class="header__nav-item">Shows</div>
         </nav>
       </div>
     </header>
-
+  
     <section class="hero">
       <div class="hero__image-container">
         <img
@@ -36,13 +36,13 @@
         </div>
       </div>
     </section>
-
+  
     <main class="main-content">
-      <section>
-        <h2>About the Musicians</h2>
-        <div class="Parent_imageContainer">
-          <div class="imageContainer">
-            <img src="/assets/images/band.jpg" alt="Photo Gallery" />
+      <section class="main-content__section">
+        <h2 class="main-content__title">About the Musicians</h2>
+        <div class="main-content__image-wrapper">
+          <div class="main-content__image-container">
+            <img src="/assets/images/band.jpg" alt="Photo Gallery" class="main-content__image" />
           </div>
         </div>
         <p class="main-content__text">
@@ -51,8 +51,8 @@
         </p>
         <p class="main-content__text">Lead Vocalist of The Bees Knees</p>
       </section>
-
-      <section>
+  
+      <section class="main-content__section">
         <p class="main-content__text">The Bees Knees</p>
         <p class="main-content__text">
           The Bees Knees is a pop rock band originating from San Francisco,
@@ -64,7 +64,7 @@
           band could succeed even further with more support, pushing The Bees
           Knees to sign with a well known record label.
         </p>
-
+  
         <p class="main-content__text">
           From there, the band has soared, gaining international recognition and
           ranking in the top 10 on the Poster Charts. New fans immediately fell
@@ -76,75 +76,84 @@
           to be released in early 2024.
         </p>
       </section>
-
-      <section>
+  
+      <section class="main-content__section">
         <div class="main-content__gallery">
-          <h2>Photo Gallery</h2>
-          <div class="Parent_imageContainer">
-            <div class="imageContainer">
+          <h2 class="main-content__title">Photo Gallery</h2>
+          <div class="main-content__image-wrapper">
+            <div class="main-content__image-container">
               <img
                 src="/assets/images/Photo-gallery-1.jpg"
                 alt="Photo Gallery"
+                class="main-content__image"
               />
             </div>
-            <div class="imageContainer">
+            <div class="main-content__image-container">
               <img
                 src="/assets/images/Photo-gallery-2.jpg"
                 alt="Photo Gallery"
+                class="main-content__image"
               />
             </div>
-            <div class="imageContainer">
+            <div class="main-content__image-container">
               <img
                 src="/assets/images/Photo-gallery-3.jpg"
                 alt="Photo Gallery"
+                class="main-content__image"
               />
             </div>
-            <div class="imageContainer">
+            <div class="main-content__image-container">
               <img
                 src="/assets/images/Photo-gallery-4.jpg"
                 alt="Photo Gallery"
+                class="main-content__image"
               />
             </div>
-            <div class="imageContainer">
+            <div class="main-content__image-container">
               <img
                 src="/assets/images/Photo-gallery-5.jpg"
                 alt="Photo Gallery"
+                class="main-content__image"
               />
             </div>
-            <div class="imageContainer">
+            <div class="main-content__image-container">
               <img
                 src="/assets/images/Photo-gallery-9.jpg"
                 alt="Photo Gallery"
+                class="main-content__image"
               />
             </div>
-            <div class="imageContainer">
+            <div class="main-content__image-container">
               <img
                 src="/assets/images/Photo-gallery-7.jpg"
                 alt="Photo Gallery"
+                class="main-content__image"
               />
             </div>
-            <div class="imageContainer">
+            <div class="main-content__image-container">
               <img
                 src="/assets/images/Photo-gallery-8.jpg"
                 alt="Photo Gallery"
+                class="main-content__image"
               />
             </div>
-            <div class="imageContainer">
+            <div class="main-content__image-container">
               <img
                 src="/assets/images/Photo-gallery-6.jpg"
                 alt="Photo Gallery"
+                class="main-content__image"
               />
             </div>
           </div>
         </div>
       </section>
     </main>
-
+  
     <footer class="footer">
-      <section>
+      <section class="footer__section">
         <div class="footer__container">
           <h2 class="footer__title">Get in Touch</h2>
-
+  
           <div class="footer__social">
             <ul class="footer__social-list">
               <li class="footer__social-item">
@@ -175,20 +184,20 @@
                 </a>
               </li>
             </ul>
-            <p>The Bees Knees Management</p>
+            <p class="footer__text">The Bees Knees Management</p>
           </div>
         </div>
       </section>
-
-      <section>
+  
+      <section class="footer__section">
         <div class="footer__information">
           <p class="footer__information-item">503 Broadway Penthouse</p>
           <p class="footer__information-item">New York, NY 10012, USA</p>
           <p class="footer__information-item">info@thebeesknees.com</p>
         </div>
       </section>
-
-      <section>
+  
+      <section class="footer__section">
         <div class="footer__information">
           <p class="footer__information-item">Limitless Artist Group</p>
           <p class="footer__information-item">Booking Agent for</p>
@@ -196,8 +205,8 @@
           <p class="footer__information-item">bookings@limitlessag.com</p>
         </div>
       </section>
-
-      <section>
+  
+      <section class="footer__section">
         <div class="footer__information">
           <p class="footer__information-item">ARCH ENTERTAINMENT</p>
           <p class="footer__information-item">Booking Agent for</p>
@@ -205,20 +214,21 @@
           <p class="footer__information-item">bookings@archentertainment.com</p>
         </div>
       </section>
-
-      <section>
+  
+      <section class="footer__section">
         <div class="footer__logo">
-          <a href="/" class="footer__logo--band">
+          <a href="/" class="footer__logo-link">
             <img
               src="/assets/logo/Logo-bandsite.svg"
-              class="footer__image"
+              class="footer__logo-image"
               alt="logoBand"
           /></a>
-          <p class="footer__information-item">
+          <p class="footer__copyright">
             Copyright The Bees Knees © 2023 All Rights Reserved
           </p>
         </div>
       </section>
     </footer>
   </body>
-</html>
+  </html>
+  

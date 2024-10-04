@@ -6,6 +6,8 @@ html, body {
   font-family: $avenir-next;
 }
 
+// HEADER SECTION
+
 .header {
   &__container {
     display: flex;
@@ -20,13 +22,11 @@ html, body {
     display: block;
     margin-left: auto;
     margin-right: auto;
-    // padding-bottom: 16px;
     
   }
 
   &__nav {
     font-size: 14px;
-    // height: 22px;
     font-weight: 600;
     display: flex;
     flex-wrap: wrap;
@@ -35,7 +35,6 @@ html, body {
 
   &__nav-item {
     color: $White;
-    // padding-left: 36px;
   }
 
   @include tablet {
@@ -55,9 +54,11 @@ html, body {
       align-items: center;
     
     }
-
   }
 }
+
+// HERO SECTION
+
 
 .hero {
   &__image-container {
@@ -90,22 +91,15 @@ html, body {
     margin: 16px;
     font-size: 33px;
     margin-bottom: 16px;
-
-    @media (min-width: 768px) {
-      font-size: 2rem;
-      margin-bottom: 36px;
-    }
-    
-    @media (min-width: 1024px) {
-      font-size: 2.5rem;
-    }
   }
 }
+
+// MAIN CONTENT
+
 
 .main-content {
   &__text {
     margin: 16px 16px;
-    
   }
 
   &__title { 
@@ -117,32 +111,25 @@ html, body {
 
   &__gallery {
     background-color: $Alabaster;
-    
+    padding: 16px;
   }
 
   &__image-wrapper {
     display: flex;
     flex-direction: column;
-    align-items: center;
-    margin: 0 16px;
-    
+    gap: 16px;
+
     @include tablet {
       flex-direction: row;
       flex-wrap: wrap;
       justify-content: space-between;
-      margin: 0 36px;
     }
   }
 
   &__image-container {
     width: 100%;
-    margin-bottom: 24px;
-    
+
     @include tablet {
-      width: calc(33.333% - 16px);
-    }
-    
-    @include desktop {
       width: calc(33.333% - 16px);
     }
   }
@@ -153,73 +140,48 @@ html, body {
     display: block;
     object-fit: cover;
   }
+
+  &__quote {
+    font-size: 24px;
+    font-weight: 600;
+  }
+
+  &__large-text {
+    font-size: 24px;
+    font-weight: 400;
+    margin-top: 24px;
+  }
 }
+
+
+
+// FOOTER SECTION
+
 
 .footer {
   background-color: $BandSite-Black; 
   color: $White; 
   padding: 24px 16px;
 
-  @include tablet {
-    padding: 48px 36px;
-  }
-
-  &__container {
-    max-width: 1280px;
-    margin: 0 auto;
-  }
-
-  @include tablet {
-    &__container {
-      flex-direction: row;
-      justify-content: space-between;
-      align-items: center;
-    }
-  }
-
-  &__title {
-    font-size: 24px;
-    margin: 0 0 16px 0;
-
-    @include tablet {
-      font-size: 36px;
-      margin: 0;
-    }
-
-    @include desktop {
-      font-size: 36px;
-      margin: 0;
-    }
-  }
-
   &__social {
     &-list {
       list-style: none;
-      padding: 0;
-      margin: 0;
-      display: flex;
     }
-
-    &-item {
-      margin-right: 30px;
-    }
-
-    &-icon {
-      width: 24px; 
-      height: 24px; 
-    }
-  }
-
-  &__logo-image {
-    width: 25vh;
-
-  }
-
-  &__copyright {
-  }
 }
 
+@include tablet {
+&__container {
+  display: flex;
+  flex-direction: row;
+
+}
+}
+
+// &__logo {
+//   position: relative;
+// }
 
 
+}
 
 

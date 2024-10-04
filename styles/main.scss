@@ -25,6 +25,7 @@ html, body {
     
   }
 
+  
   &__nav {
     font-size: 14px;
     font-weight: 600;
@@ -45,6 +46,7 @@ html, body {
       padding: 36px;
 
     }
+    
   }
 
   @include desktop {
@@ -70,6 +72,7 @@ html, body {
   }
 
   &__image {
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5));
     position: absolute;
     width: 100%;
     height: 100%;
@@ -82,6 +85,7 @@ html, body {
     display: flex;
     align-items: center;
     justify-content: center;
+
   }
 
   &__title {
@@ -91,6 +95,7 @@ html, body {
     margin: 16px;
     font-size: 33px;
     margin-bottom: 16px;
+    
   }
 }
 
@@ -157,31 +162,135 @@ html, body {
 
 // FOOTER SECTION
 
-
-.footer {
+.footer  {
   background-color: $BandSite-Black; 
   color: $White; 
   padding: 24px 16px;
 
-  &__social {
-    &-list {
-      list-style: none;
+
+  @include tablet {
+    &__main-practice {
+      display: flex;
+      flex-direction: row;
+      justify-content: left;
+      align-items: center;
+      // gap: 50px; 
+
     }
-}
 
-@include tablet {
-&__container {
-  display: flex;
-  flex-direction: row;
+    &__practice-2 {
+      display: flex;
+      flex-direction: row;
+      gap: 100px;
+    }
+
+    &__practice-3 {
+      display: flex;
+      flex-direction: column;
+
+    }
+
+  }
 
 }
-}
+  // &__main-practice {
+  //   display: flex;
+  //   flex-direction: row;
+  //   justify-content: center;
+  //   align-items: center;
+  //   // gap: ;
+    
+  //       }
 
-// &__logo {
-//   position: relative;
+
+//   .footer {
+//     .footer__main-practice {
+// //   background-color: $BandSite-Black; 
+// display: flex;
+//       flex-direction: column;
+//       align-items: center;
+//       justify-content: center;
+//       @include tablet {
+//         justify-content: space-between;
+//         flex-direction: row;
+//       }
+//       .footer__title {
+//         font-family: $avenir-next;
+//         // font-size: $subheader__mobile;
+//       }
+//       .footer__socials--link {
+//         display: flex;
+//         justify-content: flex-start;
+//         padding-top: 7%;
+//         align-items: center;
+//         gap: 16px;
+//         img {
+//           width: 32px;
+//           height: 32px;
+//           margin: 16px 0;
+//         }
+//         @include tablet {
+//           justify-content: center;
+//           gap: 50px;
+//         }
+//       }
+//     }
+//     .practice__2 {
+//       font-family: $avenir-next;
+//       // font-size: $subheader__mobile;
+//       // line-height: $line-height_footer-copy_mobile;
+//       margin-bottom: 48px;
+//       @include tablet {
+//         display: flex;
+//         gap: 2rem;
+//       }
+//       .footer__container {
+//         a {
+//           color: inherit;
+//           text-decoration: none;
+//         }
+//       .footer__section {
+//         @include tablet {
+//           display: flex;
+//           justify-content: space-between;
+//         }
+//       }
+//     }
+//     .footer__logo {
+//       display: block;
+//       margin-top: 2rem;
+//       @include tablet {
+//         display: block;
+//         margin: auto;
+//       }
+//       img {
+//         max-width: 100%;
+//       }
+//     }
+//     .footer__copyright {
+//       font-size: 0.8rem;
+//       margin: 1rem 0;
+//       text-align: center;
+//       @include tablet {
+//         text-align: right;
+//       }
+//     }
+//   }
+  
 // }
+  
+  
+  
+  
+  
 
-
-}
-
-
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  

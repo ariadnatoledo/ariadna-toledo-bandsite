@@ -6,6 +6,12 @@ html, body {
   font-family: $avenir-next;
 }
 
+
+.container {
+margin: 0 auto;
+}
+
+
 // HEADER SECTION
 
 .header {
@@ -14,6 +20,7 @@ html, body {
     flex-direction: column;
     background-color: $BandSite-Black;
     padding: 16px 16px;
+
    
   }
 
@@ -25,13 +32,15 @@ html, body {
     
   }
 
-  
+
   &__nav {
     font-size: 14px;
     font-weight: 600;
     display: flex;
     flex-wrap: wrap;
     justify-content: space-evenly;
+    padding-top: 16px;
+    padding-bottom: 16px;
   }
 
   &__nav-item {
@@ -46,6 +55,14 @@ html, body {
       padding: 36px;
 
     }
+
+
+  &__nav-wrapper{
+    position: absolute;
+    right: 0;
+    left: 0;
+    
+      }
     
   }
 
@@ -54,8 +71,16 @@ html, body {
       flex-direction: row;
       justify-content: flex-start;
       align-items: center;
+      padding: 48px;
     
     }
+
+    &__nav-wrapper{
+      position: absolute;
+      right: 0;
+      left: 0;
+      
+        }
   }
 }
 
@@ -98,21 +123,61 @@ html, body {
     margin-bottom: 16px;
     
   }
+
+  @include tablet {
+    &__title {
+      // margin: 36px;
+      font-size: 48px;
+margin-left: 36px;
+margin-top: 48px;
+margin-right: 36px;
+margin-bottom: 36px;
+
+    }
+}
+
+@include desktop {
+  &__title {
+    font-size: 68px;
+    margin-left: 56px;
+    margin-top: 68px;
+    margin-right: 56px;
+    margin-bottom: 56px;
+  }
+
+}
+
 }
 
 // MAIN CONTENT
 
 
 .main-content {
-  &__text {
-    margin: 16px 16px;
-  }
+  // &__text {
+  //   margin: 16px 16px;
+  // }
 
   &__title { 
     font-size: 33px;
     font-weight: 600;
     margin: 16px;
     margin-top: 24px;
+    
+    @include tablet {
+      font-size: 48px;
+      margin-left: 36px;
+      margin-top: 48px;
+      margin-right: 36px;
+      margin-bottom: 36px;
+    }
+
+    @include desktop {
+      font-size: 68px;
+      margin-left: 56px;
+      margin-top: 68px;
+      margin-right: 56px;
+      margin-bottom: 56px;
+    }
   }
 
   &__gallery {
@@ -129,7 +194,15 @@ html, body {
       flex-direction: row;
       flex-wrap: wrap;
       justify-content: space-between;
+
+      &__gallery {
+        background-color: $Alabaster;
+        padding: 36px;
+      }
+
     }
+
+
   }
 
   &__image-container {
@@ -150,13 +223,40 @@ html, body {
   &__quote {
     font-size: 24px;
     font-weight: 600;
+display: flex;
+flex-direction: column;
+margin: 16px;
+
+@include tablet {
+  margin: 56px 200px 56px 200px;
+}
   }
 
   &__large-text {
     font-size: 24px;
     font-weight: 400;
-    margin-top: 24px;
+    margin: 24px 16px 24px 16px;
+
+
+    @include tablet {
+      font-size: 24px;
+      font-weight: 400;
+      margin: 56px 200px 56px 200px;
+      display: flex;
+      gap: 16px;
+      // flex-direction: column;
+    }
   }
+
+&__bandname {
+  font-size: 24px;
+  font-weight: 500;
+display: flex;
+flex-direction: column;
+margin: 16px;
+}
+
+
 }
 
 

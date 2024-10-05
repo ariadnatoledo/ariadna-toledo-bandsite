@@ -3,6 +3,10 @@ html, body {
   font-family: avenir next;
 }
 
+.container {
+  margin: 0 auto;
+}
+
 .header__container {
   display: flex;
   flex-direction: column;
@@ -21,6 +25,8 @@ html, body {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-evenly;
+  padding-top: 16px;
+  padding-bottom: 16px;
 }
 .header__nav-item {
   color: #FFFFFF;
@@ -32,12 +38,23 @@ html, body {
     align-items: center;
     padding: 36px;
   }
+  .header__nav-wrapper {
+    position: absolute;
+    right: 0;
+    left: 0;
+  }
 }
 @media screen and (min-width: 1280px) {
   .header__container {
     flex-direction: row;
     justify-content: flex-start;
     align-items: center;
+    padding: 48px;
+  }
+  .header__nav-wrapper {
+    position: absolute;
+    right: 0;
+    left: 0;
   }
 }
 
@@ -71,15 +88,48 @@ html, body {
   font-size: 33px;
   margin-bottom: 16px;
 }
-
-.main-content__text {
-  margin: 16px 16px;
+@media screen and (min-width: 768px) {
+  .hero__title {
+    font-size: 48px;
+    margin-left: 36px;
+    margin-top: 48px;
+    margin-right: 36px;
+    margin-bottom: 36px;
+  }
 }
+@media screen and (min-width: 1280px) {
+  .hero__title {
+    font-size: 68px;
+    margin-left: 56px;
+    margin-top: 68px;
+    margin-right: 56px;
+    margin-bottom: 56px;
+  }
+}
+
 .main-content__title {
   font-size: 33px;
   font-weight: 600;
   margin: 16px;
   margin-top: 24px;
+}
+@media screen and (min-width: 768px) {
+  .main-content__title {
+    font-size: 48px;
+    margin-left: 36px;
+    margin-top: 48px;
+    margin-right: 36px;
+    margin-bottom: 36px;
+  }
+}
+@media screen and (min-width: 1280px) {
+  .main-content__title {
+    font-size: 68px;
+    margin-left: 56px;
+    margin-top: 68px;
+    margin-right: 56px;
+    margin-bottom: 56px;
+  }
 }
 .main-content__gallery {
   background-color: #FAFAFA;
@@ -95,6 +145,10 @@ html, body {
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: space-between;
+  }
+  .main-content__image-wrapper__gallery {
+    background-color: #FAFAFA;
+    padding: 36px;
   }
 }
 .main-content__image-container {
@@ -115,11 +169,35 @@ html, body {
 .main-content__quote {
   font-size: 24px;
   font-weight: 600;
+  display: flex;
+  flex-direction: column;
+  margin: 16px;
+}
+@media screen and (min-width: 768px) {
+  .main-content__quote {
+    margin: 56px 200px 56px 200px;
+  }
 }
 .main-content__large-text {
   font-size: 24px;
   font-weight: 400;
-  margin-top: 24px;
+  margin: 24px 16px 24px 16px;
+}
+@media screen and (min-width: 768px) {
+  .main-content__large-text {
+    font-size: 24px;
+    font-weight: 400;
+    margin: 56px 200px 56px 200px;
+    display: flex;
+    gap: 16px;
+  }
+}
+.main-content__bandname {
+  font-size: 24px;
+  font-weight: 500;
+  display: flex;
+  flex-direction: column;
+  margin: 16px;
 }
 
 .footer {

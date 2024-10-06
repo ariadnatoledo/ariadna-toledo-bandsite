@@ -34,13 +34,14 @@ margin: 0 auto;
 
 
   &__nav {
-    font-size: 14px;
-    font-weight: 600;
+    font-size: 24px;
+    font-weight: 00;
+    line-height: 32px;
     display: flex;
     flex-wrap: wrap;
     justify-content: space-evenly;
     padding-top: 16px;
-    padding-bottom: 16px;
+    // padding-bottom: 16px;
   }
 
   &__nav-item {
@@ -153,14 +154,14 @@ margin-bottom: 36px;
 
 
 .main-content {
-  // &__text {
-  //   margin: 16px 16px;
-  // }
+  &__text {
+    margin-bottom: 0px;
+  }
 
   &__title { 
     font-size: 33px;
     font-weight: 600;
-    margin: 16px;
+    // margin: 16px;
     margin-top: 24px;
     
     @include tablet {
@@ -220,6 +221,11 @@ margin-bottom: 36px;
     object-fit: cover;
   }
 
+  // &__image-1 {
+  //   width: 80%;
+  // }
+
+
   &__quote {
     font-size: 24px;
     font-weight: 600;
@@ -253,7 +259,7 @@ margin: 16px;
   font-weight: 500;
 display: flex;
 flex-direction: column;
-margin: 16px;
+margin: 24px 16px 24px 16px;
 }
 
 
@@ -268,9 +274,34 @@ margin: 16px;
   color: $White; 
   padding: 24px 16px;
 
+  &__main-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: left;
+    // align-items: center;
+  }
 
+  &__logo {
+    padding-top: 30px;
+  }
+
+&__title {
+font-size: 33px;
+font-weight: 600;
+margin: 0 auto;
+padding-bottom: 16px;
+}
+
+&__image-container {
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: left;
+  gap: 60px;
+  padding-bottom: 16px;
+
+}
   @include tablet {
-    &__main-practice {
+    &__main-content {
       display: flex;
       flex-direction: row;
       justify-content: left;
@@ -279,13 +310,13 @@ margin: 16px;
 
     }
 
-    &__practice-2 {
+    &__container-2 {
       display: flex;
       flex-direction: row;
       gap: 100px;
     }
 
-    &__practice-3 {
+    &__container-3 {
       display: flex;
       flex-direction: column;
 

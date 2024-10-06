@@ -8,6 +8,7 @@
   </head>
   <body>
     <div class="container">
+      <!-- check if this container is doing something to your container Sass in your vh and vw -->
     <header class="header">
       <!-- <div class="header__container--imagelink"> -->
       <div class="header__container">
@@ -47,6 +48,7 @@
       <section class="main-content__section">
         <h2 class="main-content__title">About the Musicians</h2>
         <div class="main-content__image-wrapper">
+          <div class="main-content__image-1">
           <div class="main-content__image">
             <img
               src="/assets/images/band.jpg"
@@ -55,12 +57,13 @@
             />
           </div>
         </div>
+      </div>
         <div class="main-content__quote">
           <p class="main-content__text">
             "We push each other to be the best. It's not uncommon for one of us
             to say 'this needs to be better, back to the drawing board'"
           </p>
-          <p class="main-content__text">Lead Vocalist of The Bees Knees</p>
+          <p class="main-content__text">- Lead Vocalist of The Bees Knees</p>
         </div>
       </section>
 
@@ -167,11 +170,12 @@
 
     <footer class="footer">
       <section>
-        <div class="footer__main-practice">
+        <div class="footer__main-content">
         <div class="footer__main-container">
           <h2 class="footer__title">Get in Touch</h2>
         </div>
 
+      
         <div class="footer__socials--link">
           <div class="footer__image-container">
             <img
@@ -194,10 +198,11 @@
       </div>
       </section>
 
-      <div class="footer__practice-2">
+      <div class="footer__main-content">
+      <div class="footer__container-2">
       <section class="footer__section">
-        <div class="footer__practice-3">
-          <p class="footer__text">The Bees Knees Management</p>
+        <div class="footer__container-3">
+          <strong><p class="footer__text">The Bees Knees Management</p></strong>
           <p class="footer__information-item">503 Broadway Penthouse</p>
           <p class="footer__information-item">New York, NY 10012, USA</p>
           <p class="footer__information-item">info@thebeesknees.com</p>
@@ -206,7 +211,7 @@
 
       <section class="footer__section">
         <div class="footer__container">
-          <p class="footer__information-item">Limitless Artist Group</p>
+          <strong><p class="footer__information-item">Limitless Artist Group</p></strong>
           <p class="footer__information-item">Booking Agent for</p>
           <p class="footer__information-item">US / South America / Japan</p>
           <p class="footer__information-item">bookings@limitlessag.com</p>
@@ -215,7 +220,7 @@
 
       <section class="footer__section">
         <div class="footer__container">
-          <p class="footer__information-item">ARCH ENTERTAINMENT</p>
+          <strong><p class="footer__information-item">ARCH ENTERTAINMENT</p></strong>
           <p class="footer__information-item">Booking Agent for</p>
           <p class="footer__information-item">UK / EU / AU</p>
           <p class="footer__information-item">bookings@archentertainment.com</p>
@@ -235,8 +240,9 @@
           <p class="footer__copyright">
             Copyright The Bees Knees © 2023 All Rights Reserved
           </p>
-
         </div>
+        </div>
+        
       </section>
     </div>
     </footer>

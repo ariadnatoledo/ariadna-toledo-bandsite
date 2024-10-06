@@ -32,20 +32,37 @@ margin: 0 auto;
     
   }
 
+a {
+  text-decoration: none;
+  color: $White;
+}
 
   &__nav {
+    &-list {
+      display: flex;
+      align-items: center;
+      gap: 80px;
+      list-style-type: none;
+      padding-left: 0px;
+      margin: 16px 0px 0px;
+    }
+
     font-size: 24px;
     font-weight: 00;
     line-height: 32px;
     display: flex;
     flex-wrap: wrap;
     justify-content: space-evenly;
-    padding-top: 16px;
     // padding-bottom: 16px;
   }
 
   &__nav-item {
     color: $White;
+  }
+
+  &__nav-link--current {
+    border-bottom: 0.2rem solid $White;
+
   }
 
   @include tablet {
@@ -133,8 +150,11 @@ margin-left: 36px;
 margin-top: 48px;
 margin-right: 36px;
 margin-bottom: 36px;
-
+    &-about {
+padding-left: 16px;
+}
     }
+    
 }
 
 @include desktop {
@@ -150,9 +170,6 @@ margin-bottom: 36px;
 
 }
 
-// MAIN CONTENT
-
-
 .main-content {
   &__text {
     margin-bottom: 0px;
@@ -161,29 +178,30 @@ margin-bottom: 36px;
   &__title { 
     font-size: 33px;
     font-weight: 600;
-    // margin: 16px;
     margin-top: 24px;
+    &-about{
+      padding-left: 16px;
+      padding-right: 16px;
+    }
     
     @include tablet {
       font-size: 48px;
-      margin-left: 36px;
-      margin-top: 48px;
-      margin-right: 36px;
-      margin-bottom: 36px;
+      margin: 48px 36px 36px;
     }
 
     @include desktop {
       font-size: 68px;
-      margin-left: 56px;
-      margin-top: 68px;
-      margin-right: 56px;
-      margin-bottom: 56px;
+      margin: 68px 56px 56px;
     }
   }
 
   &__gallery {
     background-color: $Alabaster;
     padding: 16px;
+
+    @include tablet {
+      padding: 36px;
+    }
   }
 
   &__image-wrapper {
@@ -195,15 +213,7 @@ margin-bottom: 36px;
       flex-direction: row;
       flex-wrap: wrap;
       justify-content: space-between;
-
-      &__gallery {
-        background-color: $Alabaster;
-        padding: 36px;
-      }
-
     }
-
-
   }
 
   &__image-container {
@@ -221,51 +231,40 @@ margin-bottom: 36px;
     object-fit: cover;
   }
 
-  // &__image-1 {
-  //   width: 80%;
-  // }
-
-
   &__quote {
     font-size: 24px;
     font-weight: 600;
-display: flex;
-flex-direction: column;
-margin: 16px;
+    display: flex;
+    flex-direction: column;
+    margin: 16px;
 
-@include tablet {
-  margin: 56px 200px 56px 200px;
-}
+    @include tablet {
+      margin: 56px 200px;
+    }
   }
 
   &__large-text {
     font-size: 24px;
     font-weight: 400;
-    margin: 24px 16px 24px 16px;
-
+    margin: 24px 16px;
 
     @include tablet {
       font-size: 24px;
       font-weight: 400;
-      margin: 56px 200px 56px 200px;
+      margin: 56px 200px;
       display: flex;
       gap: 16px;
-      // flex-direction: column;
     }
   }
 
-&__bandname {
-  font-size: 24px;
-  font-weight: 500;
-display: flex;
-flex-direction: column;
-margin: 24px 16px 24px 16px;
+  &__bandname {
+    font-size: 24px;
+    font-weight: 500;
+    display: flex;
+    flex-direction: column;
+    margin: 24px 16px;
+  }
 }
-
-
-}
-
-
 
 // FOOTER SECTION
 
@@ -284,6 +283,13 @@ margin: 24px 16px 24px 16px;
   &__logo {
     padding-top: 30px;
   }
+
+&__section {
+  display: flex;
+  flex-direction: column;
+
+}
+
 
 &__title {
 font-size: 33px;

@@ -161,7 +161,6 @@ html, body {
 }
 .main-content__gallery {
   background-color: #FAFAFA;
-  padding: 16px;
 }
 @media screen and (min-width: 768px) {
   .main-content__gallery {
@@ -173,6 +172,7 @@ html, body {
   display: flex;
   flex-direction: column;
   gap: 16px;
+  padding: 16px;
 }
 @media screen and (min-width: 768px) {
   .main-content__image-wrapper {
@@ -334,4 +334,4 @@ html, body {
 .footer__information-item-space {
   margin-bottom: 0px;
   margin-top: 0;
-}/*# sourceMappingURL=main.css.map */
+}/*# sourceMappingURL=bio.css.map */

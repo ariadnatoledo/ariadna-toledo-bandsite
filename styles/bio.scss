@@ -301,67 +301,286 @@ padding-left: 16px;
 
 // FOOTER SECTION
 
+.header {
+  &__container {
+    display: flex;
+    flex-direction: column;
+    background-color: $BandSite-Black;
+    padding: 1rem 1rem;
+  }
+
+  &__logo-image {
+    width: 25vh;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  a {
+    text-decoration: none;
+    color: $White;
+  }
+
+  &__nav {
+    &-list {
+      display: flex;
+      align-items: center;
+      gap: 5rem;
+      list-style-type: none;
+      padding-left: 0;
+      margin: 1rem 0 0;
+
+      @include tablet {
+        margin: 0;
+      }
+    }
+
+    font-size: 1.5rem;
+    font-weight: 400;
+    line-height: 2rem;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+  }
+
+  &__nav-item {
+    color: $White;
+  }
+
+  &__nav-link--current {
+    border-bottom: 0.2rem solid $White;
+  }
+
+  @include tablet {
+    &__container {
+      flex-direction: row;
+      justify-content: flex-start;
+      align-items: center;
+      padding: 2.25rem;
+    }
+    
+    &__nav-wrapper {
+      position: absolute;
+      right: 0;
+      left: 0;
+    }  
+  }
+
+  @include desktop {
+    &__container {
+      flex-direction: row;
+      justify-content: flex-start;
+      align-items: center;
+      padding: 3rem;
+    }
+
+    &__nav-wrapper {
+      position: absolute;
+      right: 0;
+      left: 0;
+    }
+  }
+}
+
+.hero {
+  &__title {
+    color: $White;
+    font-weight: 500;
+    text-align: center;
+    margin: 1rem;
+    font-size: 2.0625rem;
+    margin-bottom: 1rem;
+  }
+
+  @include tablet {
+    &__title {
+      font-size: 3rem;
+      margin-left: 2.25rem;
+      margin-top: 3rem;
+      margin-right: 2.25rem;
+      margin-bottom: 2.25rem;
+      &-about {
+        padding-left: 1rem;
+      }
+    }
+  }
+
+  @include desktop {
+    &__title {
+      font-size: 4.25rem;
+      margin-left: 3.5rem;
+      margin-top: 4.25rem;
+      margin-right: 3.5rem;
+      margin-bottom: 3.5rem;
+    }
+  }
+}
+
+.main-content {
+  &__text {
+    margin-bottom: 0;
+  }
+
+  &__title { 
+    font-size: 2.0625rem;
+    font-weight: 600;
+    margin-top: 1.5rem;
+    &-about {
+      padding-right: 1rem;
+      margin: 3rem 2.25rem 2.25rem 0;
+    }
+
+    @include tablet {
+      font-size: 3rem;
+      margin: 0 2.25rem 2.25rem;
+    }
+
+    @include desktop {
+      font-size: 4.25rem;
+      margin: 4.25rem 3.5rem 3.5rem;
+    }
+  }
+
+  &__gallery {
+    background-color: $Alabaster;
+
+    @include tablet {
+      padding: 3rem;
+      padding-top: 0.625rem;
+    }
+  }
+
+  &__image-wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    padding: 1rem;
+
+    @include tablet {
+      flex-direction: row;
+      flex-wrap: wrap;
+      justify-content: space-between;
+    }
+  }
+
+  &__image-container {
+    width: 100%;
+
+    @include tablet {
+      width: calc(33.333% - 1rem);
+    }
+  }
+
+  &__quote {
+    font-size: 1.5rem;
+    font-weight: 600;
+    display: flex;
+    flex-direction: column;
+    margin: 1rem;
+
+    @include tablet {
+      margin: 3rem 8.75rem;
+    }
+    @include desktop {
+      margin: 5.625rem 12.5rem;
+      font-size: 2.0625rem;
+    }
+  }
+
+  &__large-text {
+    font-size: 1.5rem;
+    font-weight: 400;
+    margin: 1.5rem 1rem;
+
+    @include tablet {
+      font-size: 1.5rem;
+      font-weight: 400;
+      margin: 3rem 8.75rem;
+      display: flex;
+      gap: 1rem;
+    }
+
+    @include desktop {
+      font-size: 1.5rem;
+      margin-left: 12.5rem;
+      display: flex;
+    }
+  }
+
+  &__bandname {
+    font-size: 1.5rem;
+    font-weight: 500;
+    display: flex;
+    flex-direction: column;
+    margin: 1.5rem 1rem;
+
+    @include tablet {
+      margin: 3rem 8.75rem;
+      font-weight: 600;
+    }
+    @include desktop {
+      font-size: 2.0625rem;
+      margin-left: 12.5rem;
+      display: flex;
+    }
+  }
+}
+
 .footer  {
   &__information-item--link {
     text-decoration: none;
   }
   background-color: $BandSite-Black; 
   color: $White; 
-  padding: 24px 16px;
+  padding: 1.5rem 1rem;
 
   &__email-link {
-text-decoration: none;
-color: $White;
+    text-decoration: none;
+    color: $White;
   }
 
-
-@include tablet {
-  padding: 48px;
-}
+  @include tablet {
+    padding: 3rem;
+  }
 
   &__main-content {
     display: flex;
     flex-direction: column;
     justify-content: left;
-
     
     @include tablet {
-      gap: 100px;
+      gap: 6.25rem;
     }
   }
 
   &__logo {
     display: flex;
-    padding-top: 30px;
+    padding-top: 1.875rem;
   }
 
-&__section {
-  display: flex;
-  flex-direction: column;
+  &__section {
+    display: flex;
+    flex-direction: column;
+  }
 
-}
+  &__title {
+    font-size: 2.0625rem;
+    font-weight: 600;
+    margin: 0 auto;
+    padding-bottom: 1rem;
+  }
 
+  &__image-container {
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: left;
+    gap: 3.75rem;
+    padding-bottom: 1rem;
+  }
 
-&__title {
-font-size: 33px;
-font-weight: 600;
-margin: 0 auto;
-padding-bottom: 16px;
-}
-
-&__image-container {
-  display: flex;
-  flex-wrap: nowrap;
-  justify-content: left;
-  gap: 60px;
-  padding-bottom: 16px;
-
-}
-
-&__copyright {
-display: flex;
-
-}
+  &__copyright {
+    display: flex;
+  }
 
   @include tablet {
     &__main-content {
@@ -369,10 +588,7 @@ display: flex;
       flex-direction: row;
       justify-content: left;
       align-items: center;
-      // gap: 50px; 
-
     }
-
 
     &__container-2 {
       display: flex;
@@ -382,11 +598,10 @@ display: flex;
       
       @include desktop {
         display: flex;
-      flex-direction: row;
-      flex-wrap: wrap;
-      justify-content: space-between;
-      gap: 47px;
-
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        gap: 2.9375rem;
       }
     }
 
@@ -396,14 +611,11 @@ display: flex;
       flex-wrap: wrap;
       justify-content: space-between;
     }
-
   }
 
-
- &__information-item-space {
-  margin-bottom: 0px;
-  margin-top: 0;
-
- }  
+  &__information-item-space {
+    margin-bottom: 0;
+    margin-top: 0;
+  }  
 }
  

@@ -1,16 +1,20 @@
 @use './partials/variables' as *;
 @use './partials/mixins' as *;
 
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
 html, body {
   margin: 0;
   font-family: $avenir-next;
 }
 
-
 .container {
 margin: 0 auto;
 }
-
 
 // HEADER SECTION
 
@@ -45,6 +49,10 @@ a {
       list-style-type: none;
       padding-left: 0px;
       margin: 16px 0px 0px;
+
+      @include tablet {
+        margin: 0;
+      }
     }
 
     font-size: 24px;
@@ -180,13 +188,15 @@ padding-left: 16px;
     font-weight: 600;
     margin-top: 24px;
     &-about{
-      padding-left: 16px;
+      // padding-left: 16px;
       padding-right: 16px;
+      margin: 48px 36px 36px 0px;
     }
     
+
     @include tablet {
       font-size: 48px;
-      margin: 48px 36px 36px;
+      margin: 0px 36px 36px;
     }
 
     @include desktop {
@@ -200,7 +210,9 @@ padding-left: 16px;
     padding: 16px;
 
     @include tablet {
-      padding: 36px;
+      padding: 48px;
+      padding-top: 10px;
+
     }
   }
 
@@ -239,7 +251,7 @@ padding-left: 16px;
     margin: 16px;
 
     @include tablet {
-      margin: 56px 200px;
+      margin: 48px 140px;
     }
   }
 
@@ -251,7 +263,7 @@ padding-left: 16px;
     @include tablet {
       font-size: 24px;
       font-weight: 400;
-      margin: 56px 200px;
+      margin: 48px 140px;
       display: flex;
       gap: 16px;
     }
@@ -263,6 +275,12 @@ padding-left: 16px;
     display: flex;
     flex-direction: column;
     margin: 24px 16px;
+
+    @include tablet {
+      margin: 48px 140px;
+      font-weight: 600;
+
+    }
   }
 }
 
@@ -273,14 +291,24 @@ padding-left: 16px;
   color: $White; 
   padding: 24px 16px;
 
+@include tablet {
+  padding: 48px;
+}
+
   &__main-content {
     display: flex;
     flex-direction: column;
     justify-content: left;
+
+    @include tablet {
+      gap: 100px;
+    }
+  
     // align-items: center;
   }
 
   &__logo {
+    display: flex;
     padding-top: 30px;
   }
 
@@ -306,6 +334,12 @@ padding-bottom: 16px;
   padding-bottom: 16px;
 
 }
+
+&__copyright {
+display: flex;
+
+}
+
   @include tablet {
     &__main-content {
       display: flex;
@@ -316,21 +350,32 @@ padding-bottom: 16px;
 
     }
 
+
     &__container-2 {
       display: flex;
       flex-direction: row;
-      gap: 100px;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      gap: 6px;
+      
+      @include desktop {
+        display: flex;
+
+      }
     }
 
     &__container-3 {
       display: flex;
       flex-direction: column;
-
+      flex-wrap: wrap;
+      justify-content: space-between;
     }
 
   }
 
 }
+
+
   // &__main-practice {
   //   display: flex;
   //   flex-direction: row;

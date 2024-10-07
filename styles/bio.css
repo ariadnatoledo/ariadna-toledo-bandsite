@@ -261,6 +261,13 @@ html, body {
   color: #FFFFFF;
   padding: 24px 16px;
 }
+.footer__information-item--link {
+  text-decoration: none;
+}
+.footer__email-link {
+  text-decoration: none;
+  color: #FFFFFF;
+}
 @media screen and (min-width: 768px) {
   .footer {
     padding: 48px;

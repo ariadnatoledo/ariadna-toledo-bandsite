@@ -302,9 +302,18 @@ padding-left: 16px;
 // FOOTER SECTION
 
 .footer  {
+  &__information-item--link {
+    text-decoration: none;
+  }
   background-color: $BandSite-Black; 
   color: $White; 
   padding: 24px 16px;
+
+  &__email-link {
+text-decoration: none;
+color: $White;
+  }
+
 
 @include tablet {
   padding: 48px;
@@ -397,8 +406,4 @@ display: flex;
 
  }  
 }
-
-
-
-  
-  
+ 

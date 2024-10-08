@@ -24,3 +24,332 @@
   }
 }
 
+// Styling
+
+@mixin flex-center {
+  display: flex;
+  align-items: center;
+}
+
+@mixin flex-column {
+  display: flex;
+  flex-direction: column;
+}
+
+@mixin flex-row {
+  display: flex;
+  flex-direction: row;
+}
+
+@mixin header {
+  &__container {
+    @include flex-column;
+    background-color: $BandSite-Black;
+    padding: 16px;
+
+    @include tablet {
+      @include flex-row;
+      justify-content: flex-start;
+      align-items: center;
+      padding: 36px;
+      gap: 80px;
+    }
+
+    @include desktop {
+      padding: 48px;
+    }
+  }
+
+  &__logo-image {
+    width: 25vh;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  a {
+    text-decoration: none;
+    color: $White;
+  }
+
+  &__nav {
+    font-size: 24px;
+    font-weight: 600;
+    line-height: 32px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+
+    &-list {
+      @include flex-center;
+      gap: 80px;
+      list-style-type: none;
+      padding-left: 0;
+      margin: 16px 0 0;
+
+      @include tablet {
+        margin: 0;
+      }
+    }
+  }
+
+  &__nav-item {
+    color: $White;
+  }
+
+  &__nav-link--current {
+    border-bottom: 0.2rem solid $White;
+  }
+
+  &__nav-wrapper {
+    @include tablet {
+      position: absolute;
+      right: 0;
+      left: 0;
+    }
+  }
+}
+
+@mixin hero {
+  &__image-container {
+    position: relative;
+    width: 100%;
+    height: 0;
+    padding-bottom: 56.25%;
+  }
+
+  &__image {
+    background: $Hero-Background;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+  }
+
+  &__overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    @include flex-center;
+  }
+
+  &__title {
+    color: $White;
+    font-weight: 500;
+    text-align: center;
+    margin: 16px;
+    font-size: 33px;
+
+    @include tablet {
+      font-size: 48px;
+      margin: 48px 36px 36px;
+
+      &-about {
+        padding-left: 16px;
+      }
+    }
+
+    @include desktop {
+      font-size: 68px;
+      margin: 68px 56px 56px;
+    }
+  }
+}
+
+@mixin main-content {
+  &__text {
+    margin-bottom: 0;
+  }
+
+  &__title {
+    font-size: 33px;
+    font-weight: 600;
+    margin-top: 24px;
+
+    &-about {
+      padding-right: 16px;
+      margin: 48px 36px 36px 0;
+    }
+
+    @include tablet {
+      font-size: 48px;
+      margin: 0 36px 36px;
+    }
+
+    @include desktop {
+      font-size: 68px;
+      margin: 68px 56px 56px;
+    }
+  }
+
+  &__gallery {
+    background-color: $Alabaster;
+
+    @include tablet {
+      padding: 10px 48px 48px;
+    }
+  }
+
+  &__image-wrapper {
+    @include flex-column;
+    gap: 16px;
+    padding: 16px;
+
+    @include tablet {
+      @include flex-row;
+      flex-wrap: wrap;
+      justify-content: space-between;
+    }
+  }
+
+  &__image-container {
+    width: 100%;
+
+    @include tablet {
+      width: calc(33.333% - 16px);
+    }
+  }
+
+  &__image {
+    width: 100%;
+    height: auto;
+    display: block;
+    object-fit: cover;
+  }
+
+  &__quote {
+    @include flex-column;
+    font-size: 24px;
+    font-weight: 600;
+    margin: 16px;
+
+    @include tablet {
+      margin: 48px 140px;
+    }
+
+    @include desktop {
+      margin: 90px 200px;
+      font-size: 33px;
+    }
+  }
+
+  &__large-text {
+    font-size: 24px;
+    font-weight: 400;
+    margin: 24px 16px;
+
+    @include tablet {
+      margin: 48px 140px;
+      display: flex;
+      gap: 16px;
+    }
+
+    @include desktop {
+      margin-left: 200px;
+      display: flex;
+    }
+  }
+
+  &__bandname {
+    @include flex-column;
+    font-size: 24px;
+    font-weight: 500;
+    margin: 24px 16px;
+
+    @include tablet {
+      margin: 48px 140px;
+      font-weight: 600;
+    }
+
+    @include desktop {
+      font-size: 33px;
+      margin-left: 200px;
+    }
+  }
+}
+
+@mixin footer {
+  background-color: $BandSite-Black;
+  color: $White;
+  padding: 1.5rem 1rem;
+
+  @include tablet {
+    padding: 3rem;
+  }
+
+  &__information-item--link {
+    text-decoration: none;
+    color: $White;
+  }
+
+  &__email-link {
+    text-decoration: none;
+    color: $White;
+  }
+
+  &__main-content {
+    @include flex-column;
+    justify-content: left;
+
+    @include tablet {
+      @include flex-row;
+      align-items: center;
+      gap: 6.25rem;
+    }
+  }
+
+  &__logo {
+    display: flex;
+    padding-top: 1.875rem;
+  }
+
+  &__section {
+    @include flex-column;
+  }
+
+  &__title {
+    font-size: 2.0625rem;
+    font-weight: 600;
+    margin: 0 auto;
+    padding-bottom: 1rem;
+  }
+
+  &__image-container {
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: left;
+    gap: 3.75rem;
+    padding-bottom: 1rem;
+  }
+
+  &__copyright {
+    display: flex;
+  }
+
+  &__container-2 {
+    @include tablet {
+      @include flex-row;
+      flex-wrap: wrap;
+      justify-content: space-between;
+    }
+
+    @include desktop {
+      gap: 2.9375rem;
+    }
+  }
+
+  &__container-3 {
+    @include tablet {
+      @include flex-column;
+      flex-wrap: wrap;
+      justify-content: space-between;
+    }
+  }
+
+  &__information-item-space {
+    margin-bottom: 0;
+    margin-top: 0;
+  }
+}

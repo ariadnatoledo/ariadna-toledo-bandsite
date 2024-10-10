@@ -28,3 +28,15 @@ body {
 .footer {
   @include footer;
 }
+
+
+// NEW Addition for SPRINT-2
+
+
+
+.comment__avatar {
+  width: 36px;
+  height: 32px;
+border-radius: 50%;
+background-color: #E5E5E5;
+}

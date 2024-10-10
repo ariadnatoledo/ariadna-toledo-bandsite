@@ -6,6 +6,7 @@
     <title>Band Site</title>
     <link rel="stylesheet" href="/styles/bio.css" />
     <link rel="stylesheet" href="/styles/bio.css" />
+    <script src="/scripts/index-page.js"></script>
   </head>
   <body>
 
@@ -28,7 +29,7 @@
               <a class="header__nav-link header__nav-link--current" href="/index.html">Biography</a>
             </li>
             <li class="header__nav-item">
-              <a class="header__nav-link" href="#">Shows</a>
+              <a class="header__nav-link" href="/styles/pages/shows.html">Shows</a>
             </li>
           </ul>
         </nav>
@@ -172,7 +173,49 @@
           </div>
         </div>
       </section>
+
+
+
+      <main class="main-content__section">
+        <!-- Change the name of this Main Section in your mixins and bio scss -->
+
+        <h2 class="comment__title">Join the Conversation</h2>
+
+        <!-- I might need to change the h2 for its proper class, it was h1 before -->
+
+        <div class="comment__name-container">  
+<div class="avatar">
+                <img class="comment__avatar" src="./assets/images/Mohan-muruge.jpg" alt="">
+              </div>
+                <form class="comment__input-container">
+                    
+                    <h5 class="comment__input-container--text">NAME</h5>
+                    
+                    <textarea class="comment__text-container comment__text-container--one"  name="name" rows="10" cols="50"
+                    placeholder="Enter your name"></textarea>
+                    
+                    <h5 class="comment__input-container--text">COMMENT</h5>
+                    
+                    <textarea class="comment__text-container comment__text-container--two" name="comment" rows="10" cols="50"
+                    placeholder="Add a new comment"></textarea>
+                    
+                    <button id="magic-btn">COMMENT</button>
+                          <!-- <input type="comment" name="comment" placeholder="comment here"> -->
+
+                    <!-- <input type="color" id="color-picker" /> -->
+                    <!-- <button class="comment__button">COMMENT</button> -->
+                    
+                </form>
+                <ul class="comment__list"></ul>
+
+            </div>  
+            <div class="comment__default-comment"></div>
     </main>
+
+
+
+
+
 
     <footer class="footer">
       <section class="footer__main-content">

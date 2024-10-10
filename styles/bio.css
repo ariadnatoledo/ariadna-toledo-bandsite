@@ -237,6 +237,12 @@ body {
     margin-left: 200px;
   }
 }
+.main-content .product-form__button {
+  background: purple;
+  color: #ffffff;
+  font-size: 3px;
+  padding: 0.5rem;
+}
 
 .footer {
   background-color: #323232;
@@ -317,4 +323,11 @@ body {
 .footer__information-item-space {
   margin-bottom: 0;
   margin-top: 0;
+}
+
+.comment__avatar {
+  width: 36px;
+  height: 32px;
+  border-radius: 50%;
+  background-color: #E5E5E5;
 }/*# sourceMappingURL=bio.css.map */

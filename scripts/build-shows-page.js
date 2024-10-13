@@ -46,29 +46,10 @@ function displayShows(arr) {
   showsContainer.classList.add("shows__container");
   shows.appendChild(showsContainer);
 
-  const infoDiv = document.createElement("div");
-  infoDiv.classList.add("shows__top");
-  showsContainer.appendChild(infoDiv);
-
-  const datesTitle = document.createElement("h3");
-  datesTitle.classList.add("shows__top-date");
-  datesTitle.innerText = "DATES";
-  infoDiv.appendChild(datesTitle);
-
-  const venuesTitle = document.createElement("h3");
-  venuesTitle.classList.add("shows__top-venue");
-  venuesTitle.innerText = "VENUE";
-  infoDiv.appendChild(venuesTitle);
-
-  const locationsTitle = document.createElement("h3");
-  locationsTitle.classList.add("shows__top-location");
-  locationsTitle.innerText = "LOCATION";
-  infoDiv.appendChild(locationsTitle);
-
-  const hiddenEle = document.createElement("span");
-  hiddenEle.classList.add("shows__hidden");
-  hiddenEle.innerText = ".";
-  infoDiv.appendChild(hiddenEle);
+   // Create header row
+   const headerRow = document.createElement("div");
+   headerRow.classList.add("shows__header");
+   showsContainer.appendChild(headerRow);
 
   for (let key in arrDates) {
     //container div
@@ -123,3 +104,4 @@ function displayShows(arr) {
 displayShows(arrDates);
 
 });
+

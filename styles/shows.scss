@@ -64,85 +64,98 @@ background-color: #E5E5E5;
     flex-direction: column;
   }
 
-
-
-// shows section with Sass
-
-  // .shows {
-  //   display: flex;
-  //   flex-direction: column;
-  //   justify-content: center;
-  //   padding-left: 16px;
-  // }
-
+// Show Section 
 
 .shows {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  padding-left: 16px;
   background-color: $White;
 
-
-  &__container {
-    width: 100%;
-    border-collapse: collapse;
-
+  &__date, &__date-actual {
+    display: flex;
+    flex-direction: column;
   }
 
-  &__top, &__new {
+  &__title {
+    font-size: 32px;
+    font-weight: 600;
+    padding: 16px;
+    margin-bottom: 0;
+  }
+
+  &__container {
     display: flex;
-    align-items: center;
+    flex-direction: column;
+    width: 100%;
+    border-collapse: collapse;
+  }
+
+  &__new {
+    display: flex;
+    flex-direction: column;
     border-bottom: 1px solid $Mercury;
     transition: background-color 0.3s ease;
 
-
     @include mobile {
       padding: 16px;
+      display: flex;
+      flex-direction: column;
     }
 
     @include tablet {
       padding: 24px 18px;
+      flex-direction: row;
+      align-items: flex-start;
+      // display: flex;
+      // flex-direction: column;
     }
 
     @include desktop {
       padding: 24px 18px;
-
     }
-  }
 
-  &__top {
-    font-weight: bold;
-    text-transform: uppercase;
-    background-color: $Mercury;
-
-  }
-
-  &__new {
     &:hover {
-      background-color: $Mercury;
-    }
-
-    &.selected {
       background-color: $Mercury;
     }
   }
 
   &__date, &__venue, &__location {
-    flex: 1;
-    &:hover {
-      background-color: $Alabaster;
+    display: flex;
+    flex-direction: column;
+    color: $Silver;
+    font-weight: 600;
+
+    @include mobile {
+      margin-bottom: 8px;
     }
 
     &.selected {
-      background-color: $Mercury;
+      background-color: $Alabaster;
     }
   }
 
+  &__date-actual,
+  &__venue-actual,
+  &__location-actual {
+    margin-bottom: 16px;
+  }
+
+  &__date-actual {
+    font-weight: 600;
+  }
+
+  &__location-actual,
+  &__venue-actual {
+    font-weight: 300;
+  }
+
   &__button {
+    width: 100%;
+    align-self: stretch;
     padding: 8px 16px;
-    background-color: #000;
-    color: #fff;
+    background-color: $BandSite-Black;
+    color: $White;
     border: none;
     border-radius: 4px;
     cursor: pointer;
@@ -153,35 +166,41 @@ background-color: #E5E5E5;
     }
   }
 
-  @include tablet  {
-    &__date, &__venue, &__location {
-      display: none;
-    }
-
-    @include desktop {
-      &__date, &__venue, &__location {
-        display: none;
-    }
-  }
-
-  @include mobile {
+  @include tablet {
     &__new {
-      flex-direction: column;
-      align-items: flex-start;
+      flex-direction: row;
+      
     }
 
-    &__date, &__venue, &__location {
+    &__labels,
+    &__info {
+      // display: flex;
+      // flex-direction: row;
+      // justify-content: space-between;
+    }
+
+    &__labels {
       margin-bottom: 8px;
-      font-weight: bold;
     }
 
+    &__date, &__venue, &__location,
     &__date-actual, &__venue-actual, &__location-actual {
-      margin-bottom: 16px;
+      flex: 1;
+      margin-right: 24px; 
     }
-
+  
+    &__date-actual, &__venue-actual, &__location-actual {
+      display: flex;
+      flex-direction: column;
+    }
     &__button {
-      align-self: stretch;
+      align-self: flex-start;
+      width: auto;
+      margin-top: 16px;
     }
   }
-}
+
+  @include desktop {
+    // Add any desktop-specific styles here
+  }
 }

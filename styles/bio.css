@@ -327,8 +327,12 @@ body {
 
 .panel {
   width: 100%;
-  max-width: 100%;
+  max-width: 1280px;
+  margin: 0 auto;
+  margin-left: auto;
+  margin-right: auto;
   padding: 0 16px;
+  box-sizing: border-box;
 }
 .panel__title {
   padding: 0.5rem 0;
@@ -338,12 +342,28 @@ body {
   font-size: 1.5rem;
   border-bottom: 1px solid #e1e1e1;
 }
+@media screen and (min-width: 768px) {
+  .panel {
+    padding: 0 0px 0 64px;
+    box-sizing: border-box;
+  }
+}
+@media screen and (min-width: 1280px) {
+  .panel {
+    padding: 0 0px 0 300px;
+    box-sizing: border-box;
+  }
+}
 
 .player-form {
   display: flex;
   width: 100%;
+  max-width: 1280px;
+  margin-left: auto;
+  margin-right: auto;
   gap: 16px;
   align-items: flex-start;
+  box-sizing: border-box;
 }
 .player-form__personal-info-container {
   display: flex;
@@ -384,55 +404,43 @@ body {
 .player-form input:focus, .player-form textarea:focus {
   outline: 2px solid #fecf02;
 }
+@media screen and (min-width: 768px) {
+  .player-form {
+    padding: 0 150px 0 64px;
+    max-width: 768px;
+  }
+  .player-form__button {
+    align-self: flex-end;
+    width: auto;
+  }
+}
+@media screen and (min-width: 1280px) {
+  .player-form {
+    padding: 0 350px 0 120px;
+    max-width: 1280px;
+  }
+}
 
 .comment__input {
   height: 100px;
   resize: vertical;
 }
 
+#avatar-container, #avatar-container-2 {
+  display: flex;
+  flex-direction: column;
+  width: 36px;
+  height: 36px;
+  flex-shrink: 0;
+  border-radius: 50%;
+  background-color: #e1e1e1;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
 #avatar-container {
-  display: flex;
-  flex-direction: column;
   background-image: url("../assets/images/Mohan-muruge.jpg");
-  width: 36px;
-  height: 36px;
-  flex-shrink: 0;
-  border-radius: 50%;
-  background-color: #e1e1e1;
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-}
-
-#avatar-container-2 {
-  display: flex;
-  flex-direction: column;
-  width: 36px;
-  height: 36px;
-  flex-shrink: 0;
-  border-radius: 50%;
-  background-color: #e1e1e1;
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-}
-
-.posts {
-  display: flex;
-  flex-direction: column;
-  gap: 16px;
-  flex-grow: 1;
-  align-items: flex-start;
-}
-.posts__container {
-  display: flex;
-  flex-direction: column;
-}
-.posts__posted {
-  font-size: 12px;
-}
-.posts .post-content {
-  flex: 1;
 }
 
 h3 {
@@ -440,7 +448,7 @@ h3 {
   flex-direction: column;
   gap: 4px;
   font-size: 12px;
-  font-weight: bold;
+  font-weight: 500;
   width: 100%;
 }
 
@@ -451,9 +459,68 @@ h3 {
   margin: 16px 0;
 }
 
-@media (max-width: 320px) {
+.posts .post {
+  display: flex;
+  flex-direction: row;
+  margin-bottom: 16px;
+  padding-left: 16px;
+  padding-right: 16px;
+  box-sizing: border-box;
+}
+.posts .post #avatar-container-2 {
+  margin-right: 16px;
+}
+.posts .post #avatar-container-2 img {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+}
+.posts .post .posts__information--container {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+.posts .post .posts__information--container .posts__name {
+  margin: 0;
+  font-size: 16px;
+  font-weight: 600;
+}
+.posts .post .posts__information--container .posts__timestamp {
+  margin: 4px 0 8px;
+  font-size: 14px;
+  color: #afafaf;
+  flex-direction: row-reverse;
+}
+.posts .post .posts__information--container .posts__posted {
+  font-size: 14px;
+}
+@media screen and (min-width: 768px) {
+  .posts .post {
+    padding: 0 150px 0 128px;
+    max-width: 768px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+@media screen and (min-width: 1280px) {
+  .posts .post {
+    padding: 0 350px 0 420px;
+    max-width: 1280px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
+.posts__name-timestamp-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 8px;
+}
+
+@media (max-width: 767px) {
   .player-form {
-    flex-direction: column;
+    flex-direction: row;
     gap: 16px;
   }
   .player-form__personal-info-container {
@@ -465,11 +532,5 @@ h3 {
   }
   #avatar-container {
     align-self: flex-start;
-  }
-}
-@media (min-width: 768px) {
-  .player-form__button {
-    align-self: flex-end;
-    width: auto;
   }
 }/*# sourceMappingURL=bio.css.map */

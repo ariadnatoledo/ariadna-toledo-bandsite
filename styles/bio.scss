@@ -30,12 +30,10 @@ body {
 }
 
 
-// NEW Addition for SPRINT-2
-
 // .panel {
 //   width: 100%;
 //   max-width: 100%;
-//   padding: 0 16px; // Add horizontal padding to the panel
+//   padding: 0 16px;
 
 //   &__title {
 //     padding: 0.5rem 0;
@@ -45,6 +43,17 @@ body {
 //     font-size: 1.5rem;
 //     border-bottom: 1px solid $Mercury;
 //   }
+
+//   // @include tablet {
+//   //   padding: 0 150px 0px 64px;
+//   // }
+
+//   // @include desktop {
+//   //   // padding: 0 42px;
+//   //   padding-left: 800px;
+//   //   padding-right: 300px
+
+//   // }
 // }
 
 // .player-form {
@@ -52,13 +61,34 @@ body {
 //   width: 100%;
 //   gap: 16px;
 //   align-items: flex-start;
+//   @include tablet {
+//     padding: 0 150px 0px 64px;
+//   }
+
+//   @include desktop {
+//     // padding: 0 42px;
+//     padding-left: 500px;
+//     padding-right: 500px
+
+//   }
 
 //   &__personal-info-container {
 //     display: flex;
 //     flex-direction: column;
 //     gap: 16px;
 //     flex-grow: 1;
-//     width: calc(100% - 52px); // 100% minus avatar width and gap
+//     width: calc(100% - 52px);
+
+//     @include tablet {
+//       padding: 0 150px 0px 64px;
+//     }
+  
+//     @include desktop {
+//       // padding: 0 42px;
+//       padding-left: 500px;
+//       padding-right: 500px
+  
+//     }
 //   }
 
 //   label {
@@ -81,7 +111,6 @@ body {
 //   }
 
 //   &__button {
-//     align-self: flex-end;
 //     border: none;
 //     height: 40px;
 //     cursor: pointer;
@@ -97,6 +126,14 @@ body {
 //   input:focus, textarea:focus {
 //     outline: 2px solid #fecf02;
 //   }
+
+//   @include tablet {
+//     &__button {
+//       align-self: flex-end;
+//       width: auto;
+      
+//     }
+//   }
 // }
 
 // .comment__input {
@@ -104,8 +141,9 @@ body {
 //   resize: vertical;
 // }
 
-// #avatar-container {
-//   background-image: url('../assets/images/Mohan-muruge.jpg');
+// #avatar-container, #avatar-container-2 {
+//   display: flex;
+//   flex-direction: column;
 //   width: 36px;
 //   height: 36px;
 //   flex-shrink: 0;
@@ -116,6 +154,19 @@ body {
 //   background-repeat: no-repeat;
 // }
 
+// #avatar-container {
+//   background-image: url('../assets/images/Mohan-muruge.jpg');
+// }
+
+// h3 {
+//   display: flex;
+//   flex-direction: column;
+//   gap: 4px;
+//   font-size: 12px;
+//   font-weight: 500;
+//   width: 100%;
+// }
+
 // .divider {
 //   width: 100%;
 //   height: 1px;
@@ -123,26 +174,106 @@ body {
 //   margin: 16px 0;
 // }
 
-// // Media query for smaller screens
-// @media (max-width: 320px) {
-//   .player-form {
-//     flex-direction: column;
-//     gap: 16px;
-//   }
+// .posts {
+//   .post {
+//     display: flex;
+//     flex-direction: row;
+//     margin-bottom: 16px;
+//     padding-left: 16px;
+//     padding-right: 16px;
 
-//   #avatar-container {
-//     align-self: flex-start;
-//   }
+//     #avatar-container-2 {
+//       margin-right: 16px;
 
-//   .player-form__personal-info-container {
-//     // width: 100%;
+//       img {
+//         width: 36px;
+//         height: 36px;
+//         border-radius: 50%;
+
+//         @include tablet {
+//           padding: 0 150px 0px 64px;
+//         }
+      
+//         @include desktop {
+//           // padding: 0 42px;
+//           padding-left: 500px;
+//           padding-right: 500px
+      
+//         }
+//       }
+
+      
+//     }
+
+//     .posts__information--container {
+//       display: flex;
+//       flex-direction: column;
+//       flex-grow: 1;
+
+//       .posts__name {
+//         margin: 0;
+//         font-size: 16px;
+//         font-weight: 600;
+//       }
+
+//       .posts__timestamp {
+//         margin: 4px 0 8px;
+//         font-size: 14px;
+//         color: $Silver;
+//         flex-direction: row-reverse;
+//       }
+
+//       .posts__posted {
+//         font-size: 14px;
+//       }
+//     }
+
+//     @include tablet {
+//       // padding-left: 32px;
+//       // padding-right: 32px;
+//       padding: 0 150px 0px 64px;
+
+//     }
+
+//     @include desktop {
+//       padding-left: 60px;
+//       padding-right: 42px;
+//     }
 //   }
 // }
 
+// .posts__name-timestamp-container {
+//   display: flex;
+//   justify-content: space-between;
+//   align-items: center;
+//   margin-bottom: 8px;
+// }
+
+
+
+
+// // Mixins for breakpoints
+// @mixin tablet {
+//   @media (min-width: 768px) {
+//     @content;
+//   }
+// }
+
+// @mixin desktop {
+//   @media (min-width: 1280px) {
+//     @content;
+//   }
+// }
+
+// Base styles (mobile)
 .panel {
   width: 100%;
-  max-width: 100%;
+  max-width: 1280px;
+  margin: 0 auto;
+  margin-left: auto;
+  margin-right: auto;
   padding: 0 16px;
+  box-sizing: border-box;
 
   &__title {
     padding: 0.5rem 0;
@@ -152,13 +283,29 @@ body {
     font-size: 1.5rem;
     border-bottom: 1px solid $Mercury;
   }
+
+  @include tablet {
+    padding: 0 0px 0 64px;
+    box-sizing: border-box;
+
+  }
+
+  @include desktop {
+    padding: 0 0px 0 300px;
+    box-sizing: border-box;
+
+  }
 }
 
 .player-form {
   display: flex;
   width: 100%;
+  max-width: 1280px;
+  margin-left: auto;
+  margin-right: auto;
   gap: 16px;
   align-items: flex-start;
+  box-sizing: border-box;
 
   &__personal-info-container {
     display: flex;
@@ -203,6 +350,22 @@ body {
   input:focus, textarea:focus {
     outline: 2px solid #fecf02;
   }
+
+  @include tablet {
+    padding: 0 150px 0 64px;
+    max-width: 768px;
+
+    &__button {
+      align-self: flex-end;
+      width: auto;
+    }
+  }
+
+  @include desktop {
+    padding: 0 350px 0 120px;
+    max-width: 1280px;
+
+  }
 }
 
 .comment__input {
@@ -210,64 +373,32 @@ body {
   resize: vertical;
 }
 
+#avatar-container, #avatar-container-2 {
+  display: flex;
+  flex-direction: column;
+  width: 36px;
+  height: 36px;
+  flex-shrink: 0;
+  border-radius: 50%;
+  background-color: $Mercury;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
 #avatar-container {
-  display: flex;
-  flex-direction: column;
   background-image: url('../assets/images/Mohan-muruge.jpg');
-  width: 36px;
-  height: 36px;
-  flex-shrink: 0;
-  border-radius: 50%;
-  background-color: $Mercury;
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
 }
-
-#avatar-container-2 {
-  display: flex;
-  flex-direction: column;
-  // background-image: url('../assets/images/Mohan-muruge.jpg');
-  width: 36px;
-  height: 36px;
-  flex-shrink: 0;
-  border-radius: 50%;
-  background-color: $Mercury;
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-}
-
-.posts {
-  display: flex;
-  flex-direction: column;
-  &__container {
-    display: flex;
-    flex-direction: column;
-  }
-  &__posted {
-    font-size: 12px;
-  }
-
-  .post-content {
-    flex: 1;
-}
-
-  gap: 16px;
-  flex-grow: 1;
-  align-items: flex-start;
-}
-
 
 h3 {
   display: flex;
   flex-direction: column;
   gap: 4px;
   font-size: 12px;
-  font-weight: bold;
+  font-weight: 500;
   width: 100%;
-  
 }
+
 .divider {
   width: 100%;
   height: 1px;
@@ -275,10 +406,75 @@ h3 {
   margin: 16px 0;
 }
 
-// Mobile styles (up to 767px)
-@media (max-width: 320px) {
+.posts {
+  .post {
+    display: flex;
+    flex-direction: row;
+    margin-bottom: 16px;
+    padding-left: 16px;
+    padding-right: 16px;
+    box-sizing: border-box;
+
+    #avatar-container-2 {
+      margin-right: 16px;
+
+      img {
+        width: 36px;
+        height: 36px;
+        border-radius: 50%;
+      }
+    }
+
+    .posts__information--container {
+      display: flex;
+      flex-direction: column;
+      flex-grow: 1;
+
+      .posts__name {
+        margin: 0;
+        font-size: 16px;
+        font-weight: 600;
+      }
+
+      .posts__timestamp {
+        margin: 4px 0 8px;
+        font-size: 14px;
+        color: $Silver;
+        flex-direction: row-reverse;
+      }
+
+      .posts__posted {
+        font-size: 14px;
+      }
+    }
+
+    @include tablet {
+      padding: 0 150px 0 128px;
+      max-width: 768px; // Set max-width for tablet
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    @include desktop {
+      padding: 0 350px 0 420px;
+      max-width: 1280px; // Set max-width for desktop
+      margin-left: auto;
+      margin-right: auto
+    }
+  }
+}
+
+.posts__name-timestamp-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 8px;
+}
+
+// Mobile-specific styles
+@media (max-width: 767px) {
   .player-form {
-    flex-direction: column;
+    flex-direction: row;
     gap: 16px;
 
     &__personal-info-container {
@@ -293,15 +489,5 @@ h3 {
 
   #avatar-container {
     align-self: flex-start;
-  }
-}
-
-// Tablet and Desktop styles (768px and above)
-@media (min-width: 768px) {
-  .player-form {
-    &__button {
-      align-self: flex-end;
-      width: auto;
-    }
   }
 }

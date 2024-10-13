@@ -38,7 +38,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
       // Create an image element for the avatar
       const avatarImage = document.createElement("img");
-      avatarImage.src = "https://placecats.com/neo/300/300";
+      avatarImage.src = "#";
       avatarImage.alt = "Avatar";
       avatarImage.style.width = "36px";
       avatarImage.style.height = "36x";
@@ -47,8 +47,18 @@ document.addEventListener("DOMContentLoaded", function () {
       avatarContainer.appendChild(avatarImage);
       postElement.appendChild(avatarContainer);
 
+      // const textContainer = document.createElement("div");
+      // textContainer.classList.add("posts__information--image--text--timestamp");
+
       const contentContainer = document.createElement("div");
       contentContainer.classList.add("post-content");
+
+      const informationContainer = document.createElement("div");
+      informationContainer.classList.add("posts__information--container");
+
+       // New div to contain postsName and postsTimestamp
+       const nameTimestampContainer = document.createElement("div");
+       nameTimestampContainer.classList.add("posts__name-timestamp-container");
 
       const postName = document.createElement("h3");
       postName.classList.add("posts__name");
@@ -60,6 +70,8 @@ document.addEventListener("DOMContentLoaded", function () {
       postsTimestamp.innerText = comment.timestamp.toLocaleDateString();
       postElement.appendChild(postsTimestamp);
 
+      informationContainer.appendChild(nameTimestampContainer);
+
       const postContainer = document.createElement("div");
       postContainer.classList.add("posts__container");
       postElement.appendChild(postContainer);
@@ -69,7 +81,16 @@ document.addEventListener("DOMContentLoaded", function () {
       postsPosted.innerText = comment.text;
       postContainer.appendChild(postsPosted);
 
-      postElement.appendChild(contentContainer);
+      informationContainer.appendChild(postName);
+      informationContainer.appendChild(postsTimestamp);
+      informationContainer.appendChild(postsPosted);
+
+      nameTimestampContainer.appendChild(postName);
+      nameTimestampContainer.appendChild(postsTimestamp);
+  
+
+
+      postElement.appendChild(informationContainer);
 
       postsContainer.appendChild(postElement);
     });

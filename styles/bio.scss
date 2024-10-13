@@ -32,11 +32,276 @@ body {
 
 // NEW Addition for SPRINT-2
 
+// .panel {
+//   width: 100%;
+//   max-width: 100%;
+//   padding: 0 16px; // Add horizontal padding to the panel
 
+//   &__title {
+//     padding: 0.5rem 0;
+//     color: black;
+//     margin: 0 0 1rem;
+//     text-align: left;
+//     font-size: 1.5rem;
+//     border-bottom: 1px solid $Mercury;
+//   }
+// }
 
-.comment__avatar {
+// .player-form {
+//   display: flex;
+//   width: 100%;
+//   gap: 16px;
+//   align-items: flex-start;
+
+//   &__personal-info-container {
+//     display: flex;
+//     flex-direction: column;
+//     gap: 16px;
+//     flex-grow: 1;
+//     width: calc(100% - 52px); // 100% minus avatar width and gap
+//   }
+
+//   label {
+//     display: flex;
+//     flex-direction: column;
+//     gap: 4px;
+//     font-size: 12px;
+//     font-weight: bold;
+//     width: 100%;
+
+//     input, textarea {
+//       border: 1px solid $Mercury;
+//       border-radius: 4px;
+//       background-color: #f9f9f9;
+//       font-size: inherit;
+//       width: 100%;
+//       padding: 8px;
+//       box-sizing: border-box;
+//     }
+//   }
+
+//   &__button {
+//     align-self: flex-end;
+//     border: none;
+//     height: 40px;
+//     cursor: pointer;
+//     padding: 8px 16px;
+//     color: $White;
+//     background-color: $BandSite-Black;
+//     border-radius: 4px;
+//     font-size: inherit;
+//     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.15);
+//     margin-top: 1rem;
+//   }
+
+//   input:focus, textarea:focus {
+//     outline: 2px solid #fecf02;
+//   }
+// }
+
+// .comment__input {
+//   height: 100px;
+//   resize: vertical;
+// }
+
+// #avatar-container {
+//   background-image: url('../assets/images/Mohan-muruge.jpg');
+//   width: 36px;
+//   height: 36px;
+//   flex-shrink: 0;
+//   border-radius: 50%;
+//   background-color: $Mercury;
+//   background-size: cover;
+//   background-position: center;
+//   background-repeat: no-repeat;
+// }
+
+// .divider {
+//   width: 100%;
+//   height: 1px;
+//   background-color: $Mercury;
+//   margin: 16px 0;
+// }
+
+// // Media query for smaller screens
+// @media (max-width: 320px) {
+//   .player-form {
+//     flex-direction: column;
+//     gap: 16px;
+//   }
+
+//   #avatar-container {
+//     align-self: flex-start;
+//   }
+
+//   .player-form__personal-info-container {
+//     // width: 100%;
+//   }
+// }
+
+.panel {
+  width: 100%;
+  max-width: 100%;
+  padding: 0 16px;
+
+  &__title {
+    padding: 0.5rem 0;
+    color: black;
+    margin: 0 0 1rem;
+    text-align: left;
+    font-size: 1.5rem;
+    border-bottom: 1px solid $Mercury;
+  }
+}
+
+.player-form {
+  display: flex;
+  width: 100%;
+  gap: 16px;
+  align-items: flex-start;
+
+  &__personal-info-container {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    flex-grow: 1;
+    width: calc(100% - 52px);
+  }
+
+  label {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    font-size: 12px;
+    font-weight: bold;
+    width: 100%;
+
+    input, textarea {
+      border: 1px solid $Mercury;
+      border-radius: 4px;
+      background-color: #f9f9f9;
+      font-size: inherit;
+      width: 100%;
+      padding: 8px;
+      box-sizing: border-box;
+    }
+  }
+
+  &__button {
+    border: none;
+    height: 40px;
+    cursor: pointer;
+    padding: 8px 16px;
+    color: $White;
+    background-color: $BandSite-Black;
+    border-radius: 4px;
+    font-size: inherit;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.15);
+    margin-top: 1rem;
+  }
+
+  input:focus, textarea:focus {
+    outline: 2px solid #fecf02;
+  }
+}
+
+.comment__input {
+  height: 100px;
+  resize: vertical;
+}
+
+#avatar-container {
+  display: flex;
+  flex-direction: column;
+  background-image: url('../assets/images/Mohan-muruge.jpg');
   width: 36px;
-  height: 32px;
-border-radius: 50%;
-background-color: #E5E5E5;
+  height: 36px;
+  flex-shrink: 0;
+  border-radius: 50%;
+  background-color: $Mercury;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+#avatar-container-2 {
+  display: flex;
+  flex-direction: column;
+  // background-image: url('../assets/images/Mohan-muruge.jpg');
+  width: 36px;
+  height: 36px;
+  flex-shrink: 0;
+  border-radius: 50%;
+  background-color: $Mercury;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.posts {
+  display: flex;
+  flex-direction: column;
+  &__container {
+    display: flex;
+    flex-direction: column;
+  }
+  &__posted {
+    font-size: 12px;
+  }
+
+  .post-content {
+    flex: 1;
+}
+
+  gap: 16px;
+  flex-grow: 1;
+  align-items: flex-start;
+}
+
+
+h3 {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  font-size: 12px;
+  font-weight: bold;
+  width: 100%;
+  
+}
+.divider {
+  width: 100%;
+  height: 1px;
+  background-color: $Mercury;
+  margin: 16px 0;
+}
+
+// Mobile styles (up to 767px)
+@media (max-width: 320px) {
+  .player-form {
+    flex-direction: column;
+    gap: 16px;
+
+    &__personal-info-container {
+      width: 100%;
+    }
+
+    &__button {
+      width: 100%;
+      align-self: stretch;
+    }
+  }
+
+  #avatar-container {
+    align-self: flex-start;
+  }
+}
+
+// Tablet and Desktop styles (768px and above)
+@media (min-width: 768px) {
+  .player-form {
+    &__button {
+      align-self: flex-end;
+      width: auto;
+    }
+  }
 }

@@ -1,126 +1,126 @@
 console.log("Hello, BrainStation 👋🧠");
 
-const comments = [
+document.addEventListener("DOMContentLoaded", function () {
+  const comments = [
     {
-        name: "Victor Pinto",
-        timestamp: new Date("2023-02-11"),
-        text: "This is art. This is inexplicable magic expressed in the purest way, everything that makes up this majestic work deserves reverence. Let us appreciate this for what it is and what it contains."
+      name: "Victor Pinto",
+      timestamp: new Date("2023-02-11"),
+      text: "This is art. This is inexplicable magic expressed in the purest way, everything that makes up this majestic work deserves reverence. Let us appreciate this for what it is and what it contains.",
     },
     {
-        name: "Christina Cabrera",
-        timestamp: new Date("2023-28-10"),
-        text: "I feel blessed to have seen them in person. What a show! They were just perfection. If there was one day of my life I could relive, this would be it. What an incredible day."
+      name: "Christina Cabrera",
+      timestamp: new Date("2023-10-28"),
+      text: "I feel blessed to have seen them in person. What a show! They were just perfection. If there was one day of my life I could relive, this would be it. What an incredible day.",
     },
     {
-        name: "Isaac Tadesse",
-        timestamp: new Date("2023-20-10"),
-        text: "I can't stop listening. Every time I hear one of their songs - the vocals - it gives me goosebumps. Shivers straight down my spine. What a beautiful expression of creativity. Can't get enough."
+      name: "Isaac Tadesse",
+      timestamp: new Date("2023-10-20"),
+      text: "I can't stop listening. Every time I hear one of their songs - the vocals - it gives me goosebumps. Shivers straight down my spine. What a beautiful expression of creativity. Can't get enough.",
+    },
+  ];
+
+  function renderComments() {
+    const postsContainer = document.querySelector(".posts");
+    if (!postsContainer) {
+      console.error("Posts container not found");
+      return;
     }
-];
 
+    postsContainer.innerText = "";
 
-// const commentForm = document.querySelector(".comment__input-container");
-// const commentList = document.querySelector(".comment__default-comment"); // Changed to match your HTML
+    comments.forEach((comment) => {
+      const postElement = document.createElement("div");
+      postElement.classList.add("post");
 
-// commentForm.addEventListener("submit", function(event) {
-//     event.preventDefault();
-//     console.log('form submitted');
-//     console.log(event);
-//     console.log(event.target);
-    
-//     const nameInput = event.target.querySelector('.comment__text-container--one');
-//     const commentInput = event.target.querySelector('.comment__text-container--two');
-    
-//     console.log('Name:', nameInput.value);
-//     console.log('Comment:', commentInput.value);
+      const avatarContainer = document.createElement("div");
+      avatarContainer.id = "avatar-container-2";
+      postElement.appendChild(avatarContainer);
 
-//     if(!commentInput.value) {
-//         alert("Show some love to the band and leave a comment!");
-//         return;
-//     }
+      // Create an image element for the avatar
+      const avatarImage = document.createElement("img");
+      avatarImage.src = "https://placecats.com/neo/300/300";
+      avatarImage.alt = "Avatar";
+      avatarImage.style.width = "36px";
+      avatarImage.style.height = "36x";
+      avatarImage.style.borderRadius = "50%";
 
-//     // Here you can add the logic to create and display the new comment
-//     addComment(nameInput.value, commentInput.value);
+      avatarContainer.appendChild(avatarImage);
+      postElement.appendChild(avatarContainer);
 
-//     // Clear the form inputs after submission
-//     nameInput.value = '';
-//     commentInput.value = '';
-// });
+      const contentContainer = document.createElement("div");
+      contentContainer.classList.add("post-content");
 
-// function addComment(name, text) {
-//     const newComment = {
-//         name: name,
-//         timestamp: new Date(),
-//         text: text
-//     };
-//     comments.unshift(newComment);
-//     displayComments();
-// }
+      const postName = document.createElement("h3");
+      postName.classList.add("posts__name");
+      postName.innerText = comment.name;
+      postElement.appendChild(postName);
 
-// // Make sure to call displayComments() when the page loads to show initial comments
-// displayComments();
+      const postsTimestamp = document.createElement("h3");
+      postsTimestamp.classList.add("posts__timestamp");
+      postsTimestamp.innerText = comment.timestamp.toLocaleDateString();
+      postElement.appendChild(postsTimestamp);
 
+      const postContainer = document.createElement("div");
+      postContainer.classList.add("posts__container");
+      postElement.appendChild(postContainer);
 
-function displayComments() {
-    const commentSection = document.querySelector('.comment__input-container');
-    commentSection.innerText = '';
+      const postsPosted = document.createElement("span");
+      postsPosted.classList.add("posts__posted");
+      postsPosted.innerText = comment.text;
+      postContainer.appendChild(postsPosted);
 
-    comments.forEach(comment => {
-        const commentElement = document.createElement('div');
-        commentElement.classList.add('comment');
-        commentElement.innerText = `
-            <h5>${comment.name}</h5>
-            <textarea>${formatDate(comment.timestamp)}</textarea>
-            <p>${comment.text}</p>
-        `;
-        commentSection.appendChild(commentElement);
+      postElement.appendChild(contentContainer);
+
+      postsContainer.appendChild(postElement);
     });
-}
+  }
 
-function formatDate(date) {
-    return date.toLocaleString('en-US', { 
-        year: 'numeric', 
-        month: 'short', 
-        day: 'numeric', 
-        hour: '2-digit', 
-        minute: '2-digit' 
-    });
-}
-
-const submitButton = document.getElementById('magic-btn');
-
-
-submitButton.addEventListener("click", function(event) {
+  function handleFormSubmit(event) {
     event.preventDefault();
-    console.log('form submitted');
-        console.log(event);
-        console.log(event.target);
-        
-        const nameInput = event.target.querySelector('.comment__text-container--one');
-        const commentInput = event.target.querySelector('.comment__text-container--two');
-        
-        console.log('Name:', nameInput.value);
-        console.log('Comment:', commentInput.value);
-    
-        if(!commentInput.value) {
-            alert("Show some love to the band and leave a comment!");
-            return;
-        }
-    
-        // Here you can add the logic to create and display the new comment
-        addComment(nameInput.value, commentInput.value);
-    
-        // Clear the form inputs after submission
-        nameInput.value = '';
-        commentInput.value = '';
-    });
-    
-    function addComment(name, text) {
-        const newComment = {
-            name: name,
-            timestamp: new Date(),
-            text: text
-        };
-        comments.unshift(newComment);
-        displayComments();
+
+    const nameInput = event.target.elements.name;
+    const textInput = event.target.elements.text;
+
+    if (!nameInput || !textInput) {
+      console.error("Form inputs not found");
+      return;
+    }
+
+    const name = nameInput.value.trim();
+    const text = textInput.value.trim();
+
+    if (!name) {
+      alert("Please enter your name!");
+      return;
+    }
+
+    if (!text) {
+      alert("Please leave a cool comment!");
+      return;
+    }
+
+    const formData = {
+      name,
+      timestamp: new Date(),
+      text,
     };
+
+    console.log(formData);
+
+    comments.unshift(formData);
+    console.log(comments);
+    renderComments();
+
+    event.target.reset();
+  }
+
+  const formEl = document.getElementById("player-form");
+
+  if (formEl) {
+    formEl.addEventListener("submit", handleFormSubmit);
+  } else {
+    console.error("Form element not found");
+  }
+
+  renderComments();
+});

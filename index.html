@@ -174,48 +174,37 @@
         </div>
       </section>
 
+<!-- FORM HTML-->
+
+<section class="panel">
+<h2 class="panel__title panel__title--primary">Join the Conversation</h2>
+
+<form id="player-form" class="player-form" novalidate>
+  <div id="avatar-container"></div>
+  <section class="player-form__personal-info-container">
+   
+    <label>
+      NAME
+      <input name="name" type="text" placeholder="Enter your name" required>
+    </label>
+    <label>
+      COMMENT
+      <input class="comment__input" name="text" type="comments" placeholder="Add a new comment" required>
+    </label>
+
+    <button type="submit" class="player-form__button">COMMENT</button>
+  </section>
+</form>
+
+<!-- Divider -->
+<div class="divider"></div>
+</section>
 
 
-      <main class="main-content__section">
-        <!-- Change the name of this Main Section in your mixins and bio scss -->
+<!-- This is written in  the DOM -->
+  <div class="posts"></div>
 
-        <h2 class="comment__title">Join the Conversation</h2>
-
-        <!-- I might need to change the h2 for its proper class, it was h1 before -->
-
-        <div class="comment__name-container">  
-<div class="avatar">
-                <img class="comment__avatar" src="./assets/images/Mohan-muruge.jpg" alt="">
-              </div>
-                <form class="comment__input-container">
-                    
-                    <h5 class="comment__input-container--text">NAME</h5>
-                    
-                    <textarea class="comment__text-container comment__text-container--one"  name="name" rows="10" cols="50"
-                    placeholder="Enter your name"></textarea>
-                    
-                    <h5 class="comment__input-container--text">COMMENT</h5>
-                    
-                    <textarea class="comment__text-container comment__text-container--two" name="comment" rows="10" cols="50"
-                    placeholder="Add a new comment"></textarea>
-                    
-                    <button id="magic-btn">COMMENT</button>
-                          <!-- <input type="comment" name="comment" placeholder="comment here"> -->
-
-                    <!-- <input type="color" id="color-picker" /> -->
-                    <!-- <button class="comment__button">COMMENT</button> -->
-                    
-                </form>
-                <ul class="comment__list"></ul>
-
-            </div>  
-            <div class="comment__default-comment"></div>
-    </main>
-
-
-
-
-
+</section>
 
     <footer class="footer">
       <section class="footer__main-content">

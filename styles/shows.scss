@@ -63,3 +63,14 @@ background-color: #E5E5E5;
     display: flex;
     flex-direction: column;
   }
+
+
+
+// shows section with Sass
+
+  .shows {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding-left: 16px;
+  }

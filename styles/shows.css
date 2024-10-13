@@ -354,4 +354,11 @@ body {
 .hero__content {
   display: flex;
   flex-direction: column;
+}
+
+.shows {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding-left: 16px;
 }/*# sourceMappingURL=shows.css.map */

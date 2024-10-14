@@ -111,11 +111,43 @@
 }
 
 @mixin hero {
-  &__image-container {
-    position: relative;
+  &__title--bees {
     width: 100%;
-    height: 0;
-    padding-bottom: 56.25%;
+    color: #ffffff;
+    font-weight: 600;
+    margin: 0 0 16px 0;
+    font-size: 48px;
+    padding-top: 200px;
+    padding-left: 16px;
+    @include tablet {
+      padding-top: 200px;
+      padding-left: 0px;
+      margin: 68px 56px 56px;
+    }
+    @include desktop {
+      margin: 68px 56px 56px;
+      padding-left: 0px;
+
+    }
+  }
+  position: relative;
+  width: 100%;
+  height: 50vh;
+  overflow: hidden;
+
+  @include tablet {
+    height: 60vh;
+  }
+
+  @include desktop {
+    height: 70vh;
+  }
+
+  &__image-container {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
   }
 
   &__image {
@@ -123,6 +155,27 @@
     position: absolute;
     width: 100%;
     height: 100%;
+    object-fit: cover;
+  }
+
+  &__iframe-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 2;
+  }
+
+  &__iframe {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    pointer-events: none;
   }
 
   &__overlay {
@@ -132,31 +185,241 @@
     width: 100%;
     height: 100%;
     background: rgba(0, 0, 0, 0.5);
-    @include flex-center;
+    z-index: 3;
+  }
+
+  &__content {
+    position: relative;
+    z-index: 4;
+    width: 100%;
+    height: 100%;
+    padding: 16px;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    @include tablet {
+      padding: 3rem;
+    }
+
+    @include desktop {
+      flex-direction: row;
+      align-items: center;
+      padding: 24rem;
+    }
+  }
+
+  &__text-container {
+    @include desktop {
+      flex: 1;
+      padding-right: 2rem;
+    }
+  }
+
+  &__text {
+    position: relative;
+    max-width: 80%;
+    margin-bottom: 2rem;
+    color: $White;
+    font-size: 16px;
+
+    @include tablet {
+      max-width: 60%;
+      font-size: 18px;
+    }
+
+    @include desktop {
+      max-width: 100%;
+      font-size: 20px;
+    }
   }
 
   &__title {
     color: $White;
-    font-weight: 500;
-    text-align: center;
-    margin: 16px;
-    font-size: 33px;
+    font-weight: 300;
+    text-align: left;
+    margin: 0 0 16px 0;
+    font-size: 24px;
+    
 
     @include tablet {
-      font-size: 48px;
-      margin: 48px 36px 36px;
-
-      &-about {
-        padding-left: 16px;
-      }
+      font-size: 32px;
+      margin-bottom: 24px;
     }
 
     @include desktop {
-      font-size: 68px;
-      margin: 68px 56px 56px;
+      font-size: 32px;
+      margin-bottom: 32px;
+    }
+
+    &--2 {
+      width: 100%;
+      color: $White;
+      font-weight: 600;
+      margin: 0 0 16px 0;
+      font-size: 33px;
+
+      @include tablet {
+        font-size: 40px;
+        margin-bottom: 24px;
+      }
+
+      @include desktop {
+        font-size: 48px;
+        margin-bottom: 32px;
+      }
     }
   }
 }
+
+@mixin shows {
+  display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background-color: $White;
+   
+    @include desktop {
+      flex-direction: row;
+    }
+
+  
+    // Title
+    &__title {
+      font-size: 32px;
+      font-weight: 600;
+      padding: 16px;
+      margin-bottom: 0;
+      @include tablet {
+        padding-top: 24px;
+        padding-left: 48px;
+            }
+    }
+  
+
+    // Container
+    &__container {
+      display: flex;
+      flex-direction: column;
+      width: 100%;
+      border-collapse: collapse;
+      @include tablet {
+        padding-top: 24px;
+        padding-left: 48px;
+        padding-right: 48px;
+            }
+    }
+  
+    // Header
+    &__header {
+      display: flex;
+      display: none;
+  
+      @include tablet {
+        display: flex;
+        padding: 0 18px;
+      }
+  
+      @include desktop {
+        display: flex;
+        padding: 0 18px;
+      }
+    }
+  
+    // Show item
+    &__new {
+      display: flex;
+      flex-direction: column;
+      border-bottom: 1px solid $Mercury;
+      transition: background-color 0.3s ease;
+  
+      @include mobile {
+        padding: 16px;
+      }
+  
+      @include tablet {
+        padding: 24px 18px;
+        flex-direction: row;
+        align-items: center;
+      }
+  
+      @include desktop {
+        padding: 24px 18px;
+      }
+  
+      &:hover {
+        background-color: $Mercury;
+      }
+    }
+  
+    // Labels
+    &__date,
+    &__venue,
+    &__location {
+      color: $Silver;
+      font-weight: 600;
+  
+      @include mobile {
+        margin-bottom: 8px;
+      }
+  
+      @include tablet {
+        flex: 1;
+        margin-right: 24px;
+      }
+    }
+  
+    // Actual values
+    &__date-actual,
+    &__venue-actual,
+    &__location-actual {
+      margin-top: 0;
+  
+      @include tablet {
+        flex: 1;
+        margin-right: 24px;
+        margin-bottom: 0;
+      }
+    }
+  
+    &__date-actual {
+      font-weight: 600;
+    }
+  
+    &__venue-actual,
+    &__location-actual {
+      font-weight: 300;
+    }
+  
+    // Button
+    &__button {
+      width: 100%;
+      align-self: stretch;
+      padding: 24px;
+      background-color: $BandSite-Black;
+      color: $White;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+  
+      &:hover {
+        background-color: darken($BandSite-Black, 10%);
+      }
+  
+      @include tablet {
+        width: auto;
+        align-self: center;
+      }
+    }
+  
+    // Mobile labels
+    &__mobile-labels {
+      @include tablet {
+        display: none;
+      }
+    }
+  }
 
 @mixin main-content {
   &__text {
@@ -167,6 +430,7 @@
     font-size: 33px;
     font-weight: 600;
     margin-top: 24px;
+    padding-left: 16px;
 
     &-about {
       padding-right: 16px;

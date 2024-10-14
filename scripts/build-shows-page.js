@@ -1,6 +1,5 @@
 document.addEventListener('DOMContentLoaded', function() {
 
-
 const arrDates = [
   {
     date: "Mon Sept 09 2024",
@@ -46,51 +45,46 @@ function displayShows(arr) {
   showsContainer.classList.add("shows__container");
   shows.appendChild(showsContainer);
 
-   // Create header row
-   const headerRow = document.createElement("div");
-   headerRow.classList.add("shows__header");
-   showsContainer.appendChild(headerRow);
+  // Create header row
+  const headerRow = document.createElement("div");
+  headerRow.classList.add("shows__header");
+  showsContainer.appendChild(headerRow);
 
-  for (let key in arrDates) {
+  // Add headers for Date, Venue, and Location
+  const headers = ["DATE", "VENUE", "LOCATION"];
+  headers.forEach(header => {
+    const headerElement = document.createElement("h4");
+    headerElement.classList.add(`shows__${header.toLowerCase()}`);
+    headerElement.innerText = header;
+    headerRow.appendChild(headerElement);
+  });
+
+  // Add an empty div for alignment with the button
+  const emptyHeader = document.createElement("div");
+  headerRow.appendChild(emptyHeader);
+
+  for (let key in arr) {
     //container div
     const showsParent = document.createElement("div");
     showsParent.classList.add("shows__new");
     showsContainer.appendChild(showsParent);
 
     //Date
-    const dateTitle = document.createElement("h4");
-    dateTitle.classList.add("shows__date");
-    dateTitle.innerText = "DATE";
-    showsParent.appendChild(dateTitle);
-
-    //Actual Date
     const dateShow = document.createElement("h3");
     dateShow.classList.add("shows__date-actual");
-    dateShow.innerText = arrDates[key]["date"];
+    dateShow.innerText = arr[key].date;
     showsParent.appendChild(dateShow);
 
     //Venue
-    const venueTitle = document.createElement("h4");
-    venueTitle.classList.add("shows__venue");
-    venueTitle.innerText = "VENUE";
-    showsParent.appendChild(venueTitle);
-
-    //Actual Venue
     const venueShow = document.createElement("h3");
     venueShow.classList.add("shows__venue-actual");
-    venueShow.innerText = arrDates[key]["venue"];
+    venueShow.innerText = arr[key].venue;
     showsParent.appendChild(venueShow);
 
     //Location
-    const locationTitle = document.createElement("h4");
-    locationTitle.classList.add("shows__location");
-    locationTitle.innerText = "LOCATION";
-    showsParent.appendChild(locationTitle);
-
-    //Actual Location
     const locationShow = document.createElement("h3");
     locationShow.classList.add("shows__location-actual");
-    locationShow.innerText = arrDates[key]["location"];
+    locationShow.innerText = arr[key].location;
     showsParent.appendChild(locationShow);
 
     //Button
@@ -102,6 +96,4 @@ function displayShows(arr) {
 }
 
 displayShows(arrDates);
-
 });
-

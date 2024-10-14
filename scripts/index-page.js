@@ -36,7 +36,6 @@ document.addEventListener("DOMContentLoaded", function () {
       avatarContainer.id = "avatar-container-2";
       postElement.appendChild(avatarContainer);
 
-      // Create an image element for the avatar
       const avatarImage = document.createElement("img");
       avatarImage.src = "#";
       avatarImage.alt = "Avatar";
@@ -47,18 +46,15 @@ document.addEventListener("DOMContentLoaded", function () {
       avatarContainer.appendChild(avatarImage);
       postElement.appendChild(avatarContainer);
 
-      // const textContainer = document.createElement("div");
-      // textContainer.classList.add("posts__information--image--text--timestamp");
-
       const contentContainer = document.createElement("div");
       contentContainer.classList.add("post-content");
 
       const informationContainer = document.createElement("div");
       informationContainer.classList.add("posts__information--container");
 
-       // New div to contain postsName and postsTimestamp
-       const nameTimestampContainer = document.createElement("div");
-       nameTimestampContainer.classList.add("posts__name-timestamp-container");
+      // New div to contain postsName and postsTimestamp
+      const nameTimestampContainer = document.createElement("div");
+      nameTimestampContainer.classList.add("posts__name-timestamp-container");
 
       const postName = document.createElement("h3");
       postName.classList.add("posts__name");
@@ -87,8 +83,6 @@ document.addEventListener("DOMContentLoaded", function () {
 
       nameTimestampContainer.appendChild(postName);
       nameTimestampContainer.appendChild(postsTimestamp);
-  
-
 
       postElement.appendChild(informationContainer);
 

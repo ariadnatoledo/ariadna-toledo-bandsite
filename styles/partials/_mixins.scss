@@ -127,7 +127,6 @@
     @include desktop {
       margin: 68px 56px 56px;
       padding-left: 0px;
-
     }
   }
   position: relative;
@@ -241,7 +240,6 @@
     text-align: left;
     margin: 0 0 16px 0;
     font-size: 24px;
-    
 
     @include tablet {
       font-size: 32px;
@@ -275,151 +273,178 @@
 
 @mixin shows {
   display: flex;
-    flex-direction: column;
-    justify-content: center;
-    background-color: $White;
-   
-    @include desktop {
-      flex-direction: row;
-    }
+  flex-direction: column;
+  justify-content: center;
+  background-color: $White;
 
-  
-    // Title
-    &__title {
-      font-size: 32px;
-      font-weight: 600;
-      padding: 16px;
-      margin-bottom: 0;
-      @include tablet {
-        padding-top: 24px;
-        padding-left: 48px;
-            }
-    }
-  
+  @include desktop {
+    flex-direction: row;
+  }
 
-    // Container
-    &__container {
-      display: flex;
-      flex-direction: column;
-      width: 100%;
-      border-collapse: collapse;
-      @include tablet {
-        padding-top: 24px;
-        padding-left: 48px;
-        padding-right: 48px;
-            }
-    }
-  
-    // Header
-    &__header {
-      display: flex;
-      display: none;
-  
-      @include tablet {
-        display: flex;
-        padding: 0 18px;
-      }
-  
-      @include desktop {
-        display: flex;
-        padding: 0 18px;
-      }
-    }
-  
-    // Show item
-    &__new {
-      display: flex;
-      flex-direction: column;
-      border-bottom: 1px solid $Mercury;
-      transition: background-color 0.3s ease;
-  
-      @include mobile {
-        padding: 16px;
-      }
-  
-      @include tablet {
-        padding: 24px 18px;
-        flex-direction: row;
-        align-items: center;
-      }
-  
-      @include desktop {
-        padding: 24px 18px;
-      }
-  
-      &:hover {
-        background-color: $Mercury;
-      }
-    }
-  
-    // Labels
-    &__date,
-    &__venue,
-    &__location {
-      color: $Silver;
-      font-weight: 600;
-  
-      @include mobile {
-        margin-bottom: 8px;
-      }
-  
-      @include tablet {
-        flex: 1;
-        margin-right: 24px;
-      }
-    }
-  
-    // Actual values
-    &__date-actual,
-    &__venue-actual,
-    &__location-actual {
-      margin-top: 0;
-  
-      @include tablet {
-        flex: 1;
-        margin-right: 24px;
-        margin-bottom: 0;
-      }
-    }
-  
-    &__date-actual {
-      font-weight: 600;
-    }
-  
-    &__venue-actual,
-    &__location-actual {
-      font-weight: 300;
-    }
-  
-    // Button
-    &__button {
-      width: 100%;
-      align-self: stretch;
-      padding: 24px;
-      background-color: $BandSite-Black;
-      color: $White;
-      border: none;
-      border-radius: 4px;
-      cursor: pointer;
-      transition: background-color 0.3s ease;
-  
-      &:hover {
-        background-color: darken($BandSite-Black, 10%);
-      }
-  
-      @include tablet {
-        width: auto;
-        align-self: center;
-      }
-    }
-  
-    // Mobile labels
-    &__mobile-labels {
-      @include tablet {
-        display: none;
-      }
+  // Title
+  &__title {
+    font-size: 32px;
+    font-weight: 600;
+    padding: 16px;
+    margin-bottom: 0;
+    @include tablet {
+      padding-top: 24px;
+      padding-left: 48px;
     }
   }
+
+  // Container
+  &__container {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    border-collapse: collapse;
+    @include tablet {
+      padding-top: 24px;
+      padding-left: 48px;
+      padding-right: 48px;
+    }
+  }
+
+  // Header
+  &__header {
+    display: flex;
+    display: none;
+
+    @include tablet {
+      display: flex;
+      padding: 0 18px;
+    }
+
+    @include desktop {
+      display: flex;
+      padding: 0 18px;
+    }
+  }
+
+  // Show item
+  &__new {
+    display: flex;
+    flex-direction: column;
+    border-bottom: 1px solid $Mercury;
+    transition: background-color 0.3s ease;
+
+    @include mobile {
+      padding: 16px;
+    }
+
+    @include tablet {
+      padding: 24px 18px;
+      flex-direction: row;
+      align-items: center;
+    }
+
+    @include desktop {
+      padding: 24px 18px;
+    }
+
+    &:hover {
+      background-color: $Mercury;
+    }
+  }
+
+  // Labels
+  &__date,
+  &__venue,
+  &__location {
+    color: $Silver;
+    font-weight: 600;
+
+    @include mobile {
+      margin-bottom: 8px;
+    }
+
+    @include tablet {
+      flex: 1;
+      margin-right: 24px;
+    }
+  }
+
+  // Actual values
+  &__date-actual,
+  &__venue-actual,
+  &__location-actual {
+    margin-top: 0;
+
+    @include tablet {
+      flex: 1;
+      margin-right: 24px;
+      margin-bottom: 0;
+    }
+  }
+
+  &__date-actual {
+    font-weight: 600;
+  }
+
+  &__venue-actual,
+  &__location-actual {
+    font-weight: 300;
+  }
+
+  // Button
+  &__button {
+    width: 100%;
+    align-self: stretch;
+    padding: 24px;
+    background-color: $BandSite-Black;
+    color: $White;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+
+    &:hover {
+      background-color: darken($BandSite-Black, 10%);
+    }
+
+    @include tablet {
+      width: auto;
+      align-self: center;
+    }
+  }
+
+  // Mobile labels
+  &__mobile-labels {
+    @include tablet {
+      display: none;
+    }
+  }
+}
+
+@mixin panel {
+  width: 100%;
+  max-width: 1280px;
+  margin: 0 auto;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 0 16px;
+  box-sizing: border-box;
+
+  &__title {
+    padding: 0.5rem 0;
+    color: black;
+    margin: 0 0 1rem;
+    text-align: left;
+    font-size: 1.5rem;
+    border-bottom: 1px solid $Mercury;
+  }
+
+  @include tablet {
+    padding: 0 0px 0 64px;
+    box-sizing: border-box;
+  }
+
+  @include desktop {
+    padding: 0 0px 0 300px;
+    box-sizing: border-box;
+  }
+}
 
 @mixin main-content {
   &__text {
@@ -623,4 +648,206 @@
     margin-bottom: 0;
     margin-top: 0;
   }
+}
+
+// Player Form
+
+.player-form {
+  display: flex;
+  width: 100%;
+  max-width: 1280px;
+  margin-left: auto;
+  margin-right: auto;
+  gap: 16px;
+  align-items: flex-start;
+  box-sizing: border-box;
+
+  &__personal-info-container {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    flex-grow: 1;
+    width: calc(100% - 52px);
+  }
+
+  label {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    font-size: 12px;
+    font-weight: bold;
+    width: 100%;
+
+    input,
+    textarea {
+      border: 1px solid $Mercury;
+      border-radius: 4px;
+      background-color: #f9f9f9;
+      font-size: inherit;
+      width: 100%;
+      padding: 8px;
+      box-sizing: border-box;
+    }
+  }
+
+  &__button {
+    border: none;
+    height: 40px;
+    cursor: pointer;
+    padding: 8px 16px;
+    color: $White;
+    background-color: $BandSite-Black;
+    border-radius: 4px;
+    font-size: inherit;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.15);
+    margin-top: 1rem;
+  }
+
+  input:focus,
+  textarea:focus {
+    outline: 2px solid #fecf02;
+  }
+
+  @include tablet {
+    padding: 0 150px 0 64px;
+    max-width: 768px;
+
+    &__button {
+      align-self: flex-end;
+      width: auto;
+    }
+  }
+
+  @include desktop {
+    padding: 0 350px 0 120px;
+    max-width: 1280px;
+  }
+}
+
+.comment__input {
+  height: 100px;
+  resize: vertical;
+}
+
+#avatar-container,
+#avatar-container-2 {
+  display: flex;
+  flex-direction: column;
+  width: 36px;
+  height: 36px;
+  flex-shrink: 0;
+  border-radius: 50%;
+  background-color: $Mercury;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+#avatar-container {
+  background-image: url("../assets/images/Mohan-muruge.jpg");
+}
+
+h3 {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  font-size: 24px;
+  font-weight: 500;
+  width: 100%;
+}
+
+.posts {
+  .post {
+    display: flex;
+    flex-direction: row;
+    margin-top: 24px;
+    margin-bottom: 16px;
+    padding-left: 16px;
+    padding-right: 16px;
+    box-sizing: border-box;
+    border-bottom: 1px solid $Mercury;
+
+    #avatar-container-2 {
+      margin-right: 16px;
+
+      img {
+        width: 36px;
+        height: 36px;
+        border-radius: 50%;
+      }
+    }
+
+    .posts__information--container {
+      display: flex;
+      flex-direction: column;
+      flex-grow: 1;
+
+      .posts__name {
+        margin: 0;
+        font-size: 16px;
+        font-weight: 600;
+      }
+
+      .posts__timestamp {
+        margin: 4px 0 8px;
+        font-size: 14px;
+        color: $Silver;
+        flex-direction: row-reverse;
+      }
+
+      .posts__posted {
+        font-size: 14px;
+        margin-bottom: 16px;
+      }
+    }
+
+    @include tablet {
+      padding: 0 150px 0 128px;
+      max-width: 768px; // Set max-width for tablet
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    @include desktop {
+      padding: 0 350px 0 420px;
+      max-width: 1280px; // Set max-width for desktop
+      margin-left: auto;
+      margin-right: auto;
+    }
+  }
+}
+
+.posts__name-timestamp-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 8px;
+}
+
+// Mobile-specific styles
+@media (max-width: 767px) {
+  .player-form {
+    flex-direction: row;
+    gap: 16px;
+
+    &__personal-info-container {
+      width: 100%;
+    }
+
+    &__button {
+      width: 100%;
+      align-self: stretch;
+    }
+  }
+
+  #avatar-container {
+    align-self: flex-start;
+  }
+}
+
+.comment__avatar {
+  width: 36px;
+  height: 32px;
+  border-radius: 50%;
+  background-color: #e5e5e5;
 }

@@ -1,3 +1,7 @@
+@use '../styles/partials/variables' as *;
+@use '../styles/partials/mixins' as *;
+
+
 * {
   margin: 0;
   padding: 0;
@@ -9,12 +13,63 @@ body {
   margin: 0;
   padding: 0;
 }
-@import './partials/colors';
+
 @import './partials/global';
-@import './partials/breakpoints';
-@import './partials/navbar';
-@import './partials/hero';
 @import './partials/about';
 @import './partials/gallery';
 @import './partials/comments';
-@import './partials/footer';
+
+
+// HERO 1st page 
+
+main {
+  padding: unset;
+}
+
+.hero {
+  height: 11.4375rem;
+  width: 100%;
+  background-image: url("/assets/images/hero-bio.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  display: flex;
+  justify-content: left;
+  align-content: center;
+  &__opacity {
+      background-color: rgba($color: black, $alpha: 0.5);
+      height: inherit;
+      width: inherit;
+      display: flex;
+      align-items: center;
+  }
+  &__title {
+      font-family: 'avenir-bold';
+      color: $color-white;
+      font-size: 1.5rem;
+      width: 13rem;
+      line-height: 2rem;
+      padding-left: 1rem;
+  }
+}
+
+@include tablet {
+  .hero {
+      height: 25rem;
+      &__title {
+          font-size: 3.75rem;
+          line-height: 4.25rem;
+          width: 32rem;
+          padding-left: 1.5rem;
+      }
+  }
+}
+
+@include desktop {
+  .hero {
+      height: 41.87rem;
+      &__title {
+          padding-left: 11.25rem;
+      }
+  }
+}

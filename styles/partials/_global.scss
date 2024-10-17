@@ -1,3 +1,6 @@
+@use '../partials/variables' as *;
+@use '../partials/mixins' as *;
+
 @font-face {
     font-family: 'avenir-regular';
     src: url("/assets/font/AvenirNextLTPro-Regular.otf");
@@ -11,4 +14,220 @@
 @font-face {
     font-family: 'avenir-bold';
     src: url("/assets/font/AvenirNextLTPro-Bold.otf");
+}
+
+
+// Nav Bar
+
+.header__nav {
+    font-family: 'avenir-regular';
+    width: 100%;
+    height: 80px;
+    background-color: $color-bandsite-black;
+    color: $color-silver;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    &-logo-container {
+        margin-top: 1rem;
+        display: flex;
+        justify-content: center;
+    }
+    &-image {
+        width: 7.5rem;
+        margin-bottom: 0.5rem;
+    }
+    &-menu {
+        list-style: none;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        margin-top: 0.5rem;
+        width: 100%;
+        &-item {
+            width: 50vw;
+            text-align: center;
+            border-bottom: 0.2125rem solid transparent;
+            &-link {
+            text-decoration: none;
+            display: block;
+            padding-bottom: 0.44rem;
+            color: $color-silver;
+            &:hover {
+                border-bottom: 0.4125rem solid $color-white;
+            }
+            }
+        }
+
+        &-item #active {
+            color: $color-white;
+            border-bottom: 0.4125rem solid $color-white;
+        }
+    }
+}
+
+@include tablet {
+    .header__nav {
+        flex-direction: row;
+        &-logo-container {
+            margin-top: 0px;
+        }
+        &-image {
+            width: 7.5rem;
+            margin-bottom: 0rem;
+            margin-left: 1.5rem;
+        }
+        &-menu {
+            justify-content: left;
+            align-items: center;
+            margin-top: 0px;
+            height: 5rem;
+            &-item {
+                display: flex;
+                align-items: center;
+                text-align: center;
+                height: 5rem;
+                width: 5rem;
+                border-bottom: unset;
+                margin-left: 3.5rem;
+                &-link {
+                    width: 5rem;
+                    display: block;
+                    margin-top: .7125rem;
+                    padding-bottom: 1.4rem;
+                    padding-top: 1.5rem;
+                    border-bottom: 0.4125rem solid transparent;
+                }
+            }
+        }
+    }
+}
+
+@include desktop {
+    .header__nav {
+        &-logo-container {
+            margin-top: 0px;
+        }
+        &-image {
+            width: 7.5rem;
+            margin-bottom: 0rem;
+            margin-left: 11.25rem;
+            margin-right: 1.75rem;
+        }
+        &-menu {
+            justify-content: left;
+            margin-top: 0px;
+            &-item {
+                margin-left: 1.75rem;
+                margin-right: 1.75rem;
+                border-bottom: unset;
+                &-link {
+                    border-bottom: 0.4125rem solid transparent
+                }
+            }
+        }
+    }
+}
+
+// Footer Section
+
+.footer {
+    background-color: $color-bandsite-black;
+    color: $color-white;
+    padding: 0 1rem;
+    font-family: 'avenir-regular';
+    font-size: 0.8125rem;
+    line-height: 1.125rem;
+    &__title {
+        font-family: 'avenir-bold';
+        font-size: 1.5rem;
+        line-height: 2rem;
+        padding: 2rem 0 1.5rem 0;
+    }
+    &__social {
+        padding-bottom: 2rem;
+        &-link {
+        margin-right: 1.6rem;
+        }
+    }
+    &__logo {
+        display: none;
+    }
+    &__contact {
+        &-name {
+            font-size: 0.875rem;
+            line-height: 1.375rem;
+            padding-bottom: 1.25rem;
+        }
+        &-location,
+        &-link {
+            color: $color-silver;
+            text-decoration: none;
+            margin-bottom: 1.25rem;
+        }
+    }
+    &__copyright {
+        color: $color-silver;
+        padding-bottom: 2rem;
+    }
+}
+
+@include tablet {
+    .footer {
+        padding: 0 1.5rem;
+        font-size: 0.875rem;
+        line-height: 1.25rem;
+        &__main {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        &__title {
+            font-size: 2.25rem;
+            line-height: 2.75rem;
+            padding: 3rem 0 3.5rem 0;
+        }
+        &__social {
+            padding: 0 8rem 0 0;
+            &-link {
+                margin-right: 2rem;
+            }
+        }
+        &__logo {
+            display: inherit;
+            height: 1.5rem;
+            width: 7.5rem;
+        }
+        &__contact {
+            padding-right: 1.875rem;
+            &-name {
+                font-size: 1rem;
+                line-height: 1.5rem;
+                padding-bottom: 1.5rem;
+            }
+            &-location {
+                padding-bottom: 0.25rem;
+            }
+            &-link {
+                margin-bottom: 2.5rem;
+            }
+            &-container {
+                display: flex;
+                justify-content: left;
+            }
+        }
+    }
+}
+
+@include desktop {
+    .footer {
+        padding: 0 11.25rem;
+        &__social {
+            padding-right: 30rem;
+        }
+        &__contact {
+            padding-right: 3.25rem;
+        }
+    }
 }

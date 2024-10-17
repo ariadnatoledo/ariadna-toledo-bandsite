@@ -1,6 +1,8 @@
 @use "../styles/partials/variables" as *;
 @use "../styles/partials/mixins" as *;
-
+@use "../styles/partials/global" as *;
+@use "../styles/partials/showstable" as *;
+ 
 * {
   margin: 0;
   padding: 0;
@@ -17,8 +19,7 @@ h3 {
   font-weight: normal;
 }
 
-@import "./partials/global";
-@import "./partials/showstable";
+
 
 // Hero 2nd page
 

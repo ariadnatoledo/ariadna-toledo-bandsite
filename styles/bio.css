@@ -1,21 +1,6 @@
 /*mobile*/
 /*tablet*/
 /*desktop*/
-* {
-  margin: 0;
-  padding: 0;
-}
-
-html,
-body {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-}
-
-/*mobile*/
-/*tablet*/
-/*desktop*/
 @font-face {
   font-family: "avenir-regular";
   src: url("/assets/font/AvenirNextLTPro-Regular.otf");
@@ -567,6 +552,18 @@ body {
     width: 6.3125rem;
   }
 }
+* {
+  margin: 0;
+  padding: 0;
+}
+
+html,
+body {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
 main {
   padding: unset;
 }

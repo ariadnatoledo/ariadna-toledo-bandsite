@@ -1,25 +1,6 @@
 /*mobile*/
 /*tablet*/
 /*desktop*/
-* {
-  margin: 0;
-  padding: 0;
-}
-
-html,
-body {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-}
-
-h3 {
-  font-weight: normal;
-}
-
-/*mobile*/
-/*tablet*/
-/*desktop*/
 @font-face {
   font-family: "avenir-regular";
   src: url("/assets/font/AvenirNextLTPro-Regular.otf");
@@ -382,6 +363,22 @@ h3 {
     padding-bottom: 0.75rem;
   }
 }
+* {
+  margin: 0;
+  padding: 0;
+}
+
+html,
+body {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+h3 {
+  font-weight: normal;
+}
+
 .hero {
   background-image: url("/assets/images/hero-shows.jpg");
   background-position: center;

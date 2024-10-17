@@ -1,3 +1,6 @@
+@use './variables' as *;
+@use './mixins' as *;
+
 .gallery {
     background-color: $color-alabaster;
     padding: 0 1rem;

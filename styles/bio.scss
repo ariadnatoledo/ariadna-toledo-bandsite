@@ -1,5 +1,9 @@
 @use "../styles/partials/variables" as *;
 @use "../styles/partials/mixins" as *;
+@use "../styles/partials/global" as *;
+@use "../styles/partials/about" as *;
+@use "../styles/partials/gallery" as *;
+@use "../styles/partials/comments" as *;
 
 * {
   margin: 0;
@@ -13,10 +17,10 @@ body {
   padding: 0;
 }
 
-@import "./partials/global";
-@import "./partials/about";
-@import "./partials/gallery";
-@import "./partials/comments";
+// @import "./partials/global";
+// @import "./partials/about";
+// @import "./partials/gallery";
+// @import "./partials/comments";
 
 // HERO 1st page
 

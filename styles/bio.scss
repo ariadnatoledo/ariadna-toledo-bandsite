@@ -1,34 +1,20 @@
-@use "./partials/variables" as *;
-@use "./partials/mixins" as *;
-
-*,
-*::before,
-*::after {
-  box-sizing: border-box;
+* {
+  margin: 0;
+  padding: 0;
 }
 
 html,
 body {
+  box-sizing: border-box;
   margin: 0;
-  font-family: $avenir-next;
+  padding: 0;
 }
-
-.header {
-  @include header;
-}
-
-.hero {
-  @include hero;
-}
-
-.main-content {
-  @include main-content;
-}
-
-.footer {
-  @include footer;
-}
-
-.panel {
-  @include panel;
-}
+@import './partials/colors';
+@import './partials/global';
+@import './partials/breakpoints';
+@import './partials/navbar';
+@import './partials/hero';
+@import './partials/about';
+@import './partials/gallery';
+@import './partials/comments';
+@import './partials/footer';

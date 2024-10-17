@@ -37,7 +37,7 @@ h3 {
   width: 100%;
   height: 80px;
   background-color: #323232;
-  color: #AFAFAF;
+  color: #afafaf;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -69,14 +69,14 @@ h3 {
   text-decoration: none;
   display: block;
   padding-bottom: 0.44rem;
-  color: #AFAFAF;
+  color: #afafaf;
 }
 .header__nav-menu-item-link:hover {
-  border-bottom: 0.4125rem solid #FFFFFF;
+  border-bottom: 0.4125rem solid #ffffff;
 }
 .header__nav-menu-item #active {
-  color: #FFFFFF;
-  border-bottom: 0.4125rem solid #FFFFFF;
+  color: #ffffff;
+  border-bottom: 0.4125rem solid #ffffff;
 }
 
 @media only screen and (min-width: 768px) {
@@ -140,7 +140,7 @@ h3 {
 }
 .footer {
   background-color: #323232;
-  color: #FFFFFF;
+  color: #ffffff;
   padding: 0 1rem;
   font-family: "avenir-regular";
   font-size: 0.8125rem;
@@ -162,17 +162,18 @@ h3 {
   display: none;
 }
 .footer__contact-name {
+  font-family: "avenir-bold";
   font-size: 0.875rem;
   line-height: 1.375rem;
   padding-bottom: 1.25rem;
 }
 .footer__contact-location, .footer__contact-link {
-  color: #AFAFAF;
+  color: #ffffff;
   text-decoration: none;
   margin-bottom: 1.25rem;
 }
 .footer__copyright {
-  color: #AFAFAF;
+  color: #ffffff;
   padding-bottom: 2rem;
 }
 
@@ -248,16 +249,17 @@ h3 {
 }
 .shows__new {
   padding: 1.5rem 0 1rem 0;
-  border-bottom: 1px solid #E1E1E1;
+  border-bottom: 1px solid #e1e1e1;
   display: flex;
   flex-direction: column;
   transition: background-color 0.3s ease;
 }
 .shows__new:hover {
-  background-color: #E1E1E1;
+  background-color: #e1e1e1;
+  padding: 1rem;
 }
 .shows__date, .shows__venue, .shows__location {
-  color: #AFAFAF;
+  color: #afafaf;
   padding-bottom: 1rem;
   font-family: "avenir-regular";
   font-size: 0.8125rem;
@@ -285,7 +287,7 @@ h3 {
 }
 .shows__button {
   background-color: #323232;
-  color: #FFFFFF;
+  color: #ffffff;
   font-family: "avenir-demi";
   width: 18.5rem;
   height: 3rem;
@@ -318,7 +320,7 @@ h3 {
     display: flex;
     justify-content: space-between;
     font-family: "avenir-regular";
-    color: #AFAFAF;
+    color: #afafaf;
   }
   .shows__top-venue, .shows__top-date, .shows__top-location {
     width: 8.375rem;
@@ -386,7 +388,7 @@ h3 {
   background-repeat: no-repeat;
   background-size: cover;
   height: 29.5rem;
-  color: #FFFFFF;
+  color: #ffffff;
   display: flex;
   flex-direction: column;
   justify-content: left;

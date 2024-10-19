@@ -16,6 +16,8 @@ const form = document.querySelector(".comments__input-info-form");
 
 function displayComments(arrPost) {
   const commentDiv = document.querySelector(".comments__section");
+  // ensure that we have no existing comments
+  document.querySelector(".comments__section").innerHTML = "";
 
   for (let key in arrPost) {
     //ADDS THE PARENT DIV FOR THE NEW COMMENT
@@ -40,7 +42,9 @@ function displayComments(arrPost) {
 
     //ADDS THE TIME STAMP TO THE PARENT DIV
     const mainTime = document.createElement("aside");
-    mainTime.innerText = arrPost[key]["date"];
+    const date = new Date(arrPost[key]["timestamp"]).toDateString();
+    mainTime.innerText = date;
+
     mainTime.classList.add("comments__new-time");
     subDiv.appendChild(mainTime);
 
@@ -128,6 +132,7 @@ async function postComments({ name, comment }) {
 
     const responseFromApi = await bandSite.postComments({ name, comment });
     console.log(responseFromApi);
+    await getComments()
   } catch (err) {
     console.error(err);
   }

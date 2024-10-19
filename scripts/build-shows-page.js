@@ -1,33 +1,24 @@
-const arrDates = [{
-  date: "Mon Sep 09 2024",
-  venue: "Ronald Lane",
-  location: "San Francisco, CA"
-}, { 
-  date: "Tue Sept 17 2024",
-  venue: "Pier 3 East",
-  location: "San Francisco, CA"
-}, {   
-  date: "Sat Oct 12 2024",
-  venue: "View Lounge",
-  location: "San Francisco, CA"
-}, {
-  date: "Sat Nov 16 2024",
-  venue: "Hyatt Agency",
-  location: "San Francisco, CA"  
-}, {
-  date: "Fri Nov 29 2024",
-  venue: "Moscow Center",
-  location: "San Francisco, CA"
-}, {
-  date: "Wed Dec 18 2024",
-  venue: "Press Club",
-  location: "San Francisco, CA"
-}];
+const API_KEY = "6c6a385-85a5-4d2a-9747-5e485843c624";
 
+const bandSite = new BandSiteApi(API_KEY);
+console.log(bandSite);
 
+// Shows Section:
+
+async function getShows() {
+  try {
+    const shows = await bandSite.getShows();
+    console.log("Shows:", shows);
+    displayShows(shows);
+  } catch (error) {
+    console.error("Failed to fetch shows:", error);
+  }
+}
+
+getShows();
 
 function displayShows(arr) {
-  const shows = document.querySelector(".shows")
+  const shows = document.querySelector(".shows");
 
   const showsTitle = document.createElement("h2");
   showsTitle.classList.add("shows__title");
@@ -35,7 +26,7 @@ function displayShows(arr) {
   shows.appendChild(showsTitle);
 
   const showsContainer = document.createElement("div");
-  showsContainer.classList.add("shows__container")
+  showsContainer.classList.add("shows__container");
   shows.appendChild(showsContainer);
 
   const infoDiv = document.createElement("div");
@@ -58,61 +49,60 @@ function displayShows(arr) {
   infoDiv.appendChild(locationsTitle);
 
   const hiddenEle = document.createElement("span");
-  hiddenEle.classList.add("shows__hidden")
+  hiddenEle.classList.add("shows__hidden");
   hiddenEle.innerText = ".";
   infoDiv.appendChild(hiddenEle);
 
+  for (let key in arr) {
+    //container div
+    const showsParent = document.createElement("div");
+    showsParent.classList.add("shows__new");
+    showsContainer.appendChild(showsParent);
 
-  for(let key in arrDates) {
+    //Date
+    const dateTitle = document.createElement("h4");
+    dateTitle.classList.add("shows__date");
+    dateTitle.innerText = "DATE";
+    showsParent.appendChild(dateTitle);
 
-      //container div
-      const showsParent = document.createElement("div");
-      showsParent.classList.add("shows__new");
-      showsContainer.appendChild(showsParent);
+    //Actual Date
+    const dateShow = document.createElement("h3");
+    dateShow.classList.add("shows__date-actual");
+    const date = new Date(arr[key]["date"]).toDateString();
+    console.log(date);
+    dateShow.innerText = date;
+    showsParent.appendChild(dateShow);
 
+    //Venue
+    const venueTitle = document.createElement("h4");
+    venueTitle.classList.add("shows__venue");
+    venueTitle.innerText = "VENUE";
+    showsParent.appendChild(venueTitle);
 
-      //Date
-      const dateTitle = document.createElement("h4");
-      dateTitle.classList.add("shows__date");
-      dateTitle.innerText = "DATE";
-      showsParent.appendChild(dateTitle);
+    //Actual Venue
+    const venueShow = document.createElement("h3");
+    venueShow.classList.add("shows__venue-actual");
+    venueShow.innerText = arr[key]["place"];
+    showsParent.appendChild(venueShow);
 
-      //Actual Date
-      const dateShow = document.createElement("h3");
-      dateShow.classList.add("shows__date-actual");
-      dateShow.innerText = arrDates[key]["date"];
-      showsParent.appendChild(dateShow);
+    //Location
+    const locationTitle = document.createElement("h4");
+    locationTitle.classList.add("shows__location");
+    locationTitle.innerText = "LOCATION";
+    showsParent.appendChild(locationTitle);
 
-      //Venue
-      const venueTitle = document.createElement("h4");
-      venueTitle.classList.add("shows__venue");
-      venueTitle.innerText = "VENUE";
-      showsParent.appendChild(venueTitle);
+    //Actual Location
+    const locationShow = document.createElement("h3");
+    locationShow.classList.add("shows__location-actual");
+    locationShow.innerText = arr[key]["location"];
+    showsParent.appendChild(locationShow);
 
-      //Actual Venue
-      const venueShow = document.createElement("h3");
-      venueShow.classList.add("shows__venue-actual");
-      venueShow.innerText = arrDates[key]["venue"];
-      showsParent.appendChild(venueShow);
-
-      //Location
-      const locationTitle = document.createElement("h4");
-      locationTitle.classList.add("shows__location");
-      locationTitle.innerText = "LOCATION";
-      showsParent.appendChild(locationTitle);
-
-      //Actual Location
-      const locationShow = document.createElement("h3");
-      locationShow.classList.add("shows__location-actual");
-      locationShow.innerText = arrDates[key]["location"];
-      showsParent.appendChild(locationShow);
-
-      //Button
-      const buyTickets = document.createElement("button");
-      buyTickets.classList.add("shows__button");
-      buyTickets.innerText = "BUY TICKETS";
-      showsParent.appendChild(buyTickets);
+    //Button
+    const buyTickets = document.createElement("button");
+    buyTickets.classList.add("shows__button");
+    buyTickets.innerText = "BUY TICKETS";
+    showsParent.appendChild(buyTickets);
   }
 }
 
-displayShows(arrDates);
+// displayShows(arr);

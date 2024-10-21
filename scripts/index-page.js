@@ -1,8 +1,7 @@
-const API_KEY = "6e6a385-85a5-4d2a-9747-5e485843c624";
+const API_KEY = "6c6a385-85a5-4d2a-9747-5e485843c624";
 
 const bandSite = new BandSiteApi(API_KEY);
 console.log(bandSite);
-
 
 //TIME STAMP
 let timeStamp = new Date();
@@ -86,24 +85,13 @@ form.addEventListener("submit", (newPost) => {
     date: timeStamp,
   };
 
-  postComments(newComment)
+  postComments(newComment);
   //CLEARS INPUT ON SUBMIT
   let formInput = document.querySelector(".comments__input-info-form");
   formInput.reset();
 });
 
-// console.log(sortedComments);
-
-// let arrComment = newComment.push();
-// newComment.push(arrComment);
-
-
-
-
-//// BANDSITE API JS:
-
-//   getComments: This method accepts no parameters. It must send a GET request to the API, using the API key instance property (this.apiKey) to authenticate the request.
-
+//   getComments:
 
 async function getComments() {
   try {
@@ -125,22 +113,15 @@ async function postComments({ name, comment }) {
     const commentObject = {
       name: "Nigel",
       comment: "What a great band.",
-      // id: "3d3b63fa-a78d-468a-a50f-57429984dd99",
-      // likes: 0,
-      // timestamp: 1705084427000
+      id: "3d3b63fa-a78d-468a-a50f-57429984dd99",
+      likes: 0,
+      timestamp: 1705084427000,
     };
 
     const responseFromApi = await bandSite.postComments({ name, comment });
     console.log(responseFromApi);
-    await getComments()
+    await getComments();
   } catch (err) {
     console.error(err);
   }
 }
-
-// testApiComments();
-
-
-
-
-
